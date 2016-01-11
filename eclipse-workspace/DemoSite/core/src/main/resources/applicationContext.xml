@@ -38,12 +38,12 @@
     </bean>
 
     <!-- Scan DemoSite Sample Payment Gateway Implementation -->
-    <context:component-scan base-package="com.rentmystuffs.sample" />
+    <context:component-scan base-package="com.rentyourstuffs.sample" />
 
-    <bean class="com.rentmystuffs.sample.vendor.nullPaymentGateway.service.payment.NullPaymentGatewayType"/>
+    <bean class="com.rentyourstuffs.sample.vendor.nullPaymentGateway.service.payment.NullPaymentGatewayType"/>
 
     <!-- Add Sample Thymeleaf Processor to test Hosted Payment Gateway (e.g. PayPal Express Flow) -->
-    <bean id="myNullPaymentGatewayHostedActionProcessor" class="com.rentmystuffs.sample.vendor.nullPaymentGateway.web.processor.NullPaymentGatewayHostedActionProcessor"/>
+    <bean id="myNullPaymentGatewayHostedActionProcessor" class="com.rentyourstuffs.sample.vendor.nullPaymentGateway.web.processor.NullPaymentGatewayHostedActionProcessor"/>
     <bean id="mySamplePaymentProcessors" class="org.springframework.beans.factory.config.SetFactoryBean">
         <property name="sourceSet">
             <set>
