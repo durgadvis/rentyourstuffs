@@ -1,2 +1,2 @@
 # rentyourstuffs
-our own project
+our own project.
