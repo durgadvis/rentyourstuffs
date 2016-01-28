@@ -1,34 +1,29 @@
-<footer class="group">
-    <div id="left_content">
-        <h4><span th:utext="#{footer.delivering}">Delivering Texas Sized Heat</span></h4>
-        &copy; <span th:utext="#{footer.copyrightHC}">Copyright 2013 The Heat Clinic</span><br />
-        <a href=""><span th:utext="#{footer.privacyPolicy}">Privacy Policy</span></a>
-    </div>
-    <div id="right_content">
-        <h4><span th:utext="#{footer.since1978}">Since Nineteen Seventy Eight</span></h4>
-        <span th:utext="#{footer.allRights}">All Rights Reserved</span>.<br />
-        <a href=""><span th:utext="#{footer.customerService}">Customer Service</span></a>
-    </div>
-    <div id="blc_brand">
-        <a href="http://www.broadleafcommerce.com"  >
-            <img blc:src="@{/img/broadleaf-seal.png}" alt="Broadleaf Commerce" />
-            <h4><span th:utext="#{footer.branding.poweredByBLC}">Powered by Broadleaf Commerce</span></h4>
-            <br />
-        </a>
-        <p>&copy; <span th:utext="#{footer.branding.copyrightBLC}">Copyright 2013 Broadleaf Commerce</span><br /></p>
-    </div>
-
-    <div th:remove="all">
-        <!--
-            Include this template at the bottom of a page (automatically included by partials/footer.html
-            to gain access to jQuery and other plugins used throughout the site.
-            
-            We will attempt to load the jQuery library from Google's CDN, but fallback on our own provided
-            jQuery if necessary.
-            
-            Other than this jQuery loading script, no other scripts should be defined inline.
-        -->
-    </div>
+<footer>
+    
+   <div class="footer-container">
+   		<div class="footer-col1">
+   			   <h3>Contact us</h3>
+			   <ul id="contact-info">
+			   		<li>Call us on 09164877044 for any help</li>
+			   		<li>Mail-id : shalvisdavid@gmail.com</li>
+			   </ul>
+   		</div>
+   		
+   		<div class="footer-col2">
+   			   <h3>Follow us</h3>
+			   <ul id="social-net">
+				   <li><a href="www.facebook.com">Facebook</a></li>
+				   <li><a href="www.twitter.com">Twitter</a></li>
+			   </ul>
+   		</div>
+   		
+   		<div class="footer-col3">
+   			<h3><span>Rent your stuffs</span></h3>
+   			<span><a href="aboutus.html">About us</a></span>
+   			<p>Rent your stuff description. Company is formed in the year 2016 and it is all about helping customer to get the book in cheaper price</p>
+   		</div>
+	<span class="footer-copyright"> &copy; Copyright 2016 rent your stuffs</span>	
+   </div> 
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script th:inline="text">
@@ -53,5 +48,6 @@
                        globalOnReady.js,
                        manageAccountOperations.js,
                        reviewOperations.js" />
+
 
 </footer>
