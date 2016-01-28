@@ -18,8 +18,8 @@ body { margin: 0; font: 12px/18px Georgia, serif; color: #655c5a; background: ur
 ::-moz-selection { background: #E40037; color: #fff; text-shadow: none; }
 ::selection { background: #E40037; color: #fff; text-shadow: none; }
 
-a { color: #E40037; } 
-a:visited { color: #E40037; }
+a { color: #ffffff; } 
+a:visited { color: #ffffff; }
 a:hover { color: #3e0000; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
@@ -46,6 +46,8 @@ dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+#homeBanner {height:400px;width:900px;}
 
 svg:not(:root) { overflow: hidden; }
 
@@ -259,13 +261,13 @@ header {
     color: #342020;
     font: 15px/28px 'Open Sans', Helvetica, sans-serif;
     font-weight: 600;
-    border-top: 15px solid #E40037;
 }
 
 #header_content {
     width: 980px;
     margin: 0 auto;
     position: relative;
+    background:#223c4a
 }
 
 #header_content_fixed {
@@ -370,10 +372,10 @@ header {
 
     #header_content #cart_info {
         padding: 10px 20px;
-        background-color: #E40037;
+        background-color: #223c4a;
         color: white;
         text-align: right;
-        float: right;
+        
     }
     
     #header_content #cart_info a:link, #header_content #cart_info a:visited {
@@ -517,7 +519,7 @@ nav {
     }
 
 #banners {
-    width: 940px;
+    width: 1200px;
     margin: 0 0 0 20px;
     position: relative;
 }
@@ -1838,16 +1840,55 @@ ul.payment_methods li {
         }
         
 footer {
-    width: 940px;
-    background: url(../img/the-heat-clinic-seal.png) top center no-repeat;
-    margin: 40px auto;
+     margin-left: 259px;
+    margin-top: 8px;
+   
+}
+
+
+.footer-container{
+	width: 942px;
+	height: 120px;
+    background:#223c4a;
     padding: 0 20px;
     padding-bottom: 40px;
     font: 12px/16px 'Georgia', serif;
-    color: #655c5a;
+    color: #fffdf9;
+	position:relative;
+	margin-bottom: 10px;
+}
+.footer-copyright{
+	position: absolute;
+  	bottom: 5px;
+  	left: 350px;
+  	
 }
 
-    footer #left_content h4, footer #right_content h4 {
+#social-net, #contact-info{
+list-style-type: none;
+padding-left: 0;	
+}
+
+	
+
+
+.footer-col1{
+	 width: 33%;
+	 float:left;
+	
+}
+
+.footer-col2{
+	 width: 33%;
+	 float:left;
+}
+
+.footer-col3{
+	 width: 33%;
+	 float:left;
+}
+
+	    footer #left_content h4, footer #right_content h4 {
         font: 12px/17px 'Open Sans', Helvetica, sans-serif;
         font-weight: 600;
         letter-spacing: 5px;
@@ -2562,7 +2603,8 @@ and (max-width : 480px) {
     #header_content #cart_info {margin-right: 10px;}
     #header_content #search {right: 10px;}
     #banners {margin-top: 10px;}
-    #banners img {width: 100%;}
+    #banners img {height: 200px;
+    width: 900px;}
     #banners, nav, #home_feature, #content .title_bar, #products, footer {width: 708px;}
     #home_feature {margin-left: 20px; margin-right: 20px; padding: 10px 0;}
     #products {margin: 15px 10px;}
