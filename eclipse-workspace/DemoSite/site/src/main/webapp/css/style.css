@@ -71,7 +71,7 @@ button, input { line-height: normal; }
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
 button[disabled], input[disabled] { cursor: default; background-color:#d9d9d9; }
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; border: none; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; font-size:21px;}
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
@@ -378,6 +378,61 @@ header {
         
     }
     
+    
+    .search-home{
+    width:450px;
+    height:40px;
+    margin:50px auto;
+    font-size: 10pt;
+    }
+    
+   #search-home {
+    float: left;
+    position: absolute;
+    bottom: 270px;
+    left: 166px;
+   }
+   
+   #search-home input[type="submit"]{
+   	font-size:21px;
+   }
+    
+  .search_button-home  {
+    	height:44px;
+    	width:116px;
+        padding:0px 15px;
+        border:2px solid #223c4a;
+        background-color:#223c4a;
+        color:#fffdf9;
+    }
+    
+    .search_button-home:hover  {
+                background-color:#fafafa;
+                color:#223c4a;
+}
+
+ul#nav-menu{
+		margin-left: 250px;
+		padding: 0;
+		font: 12px Verdana;
+		list-style-type: none;
+	
+}
+
+ul#nav-menu li {
+display: inline;
+padding: 11px
+}
+
+ul#nav-menu li a {
+	padding: 5px 30px;
+	border: 1px solid #aaa;
+	color: #223c4a;
+	text-decoration: none;
+}
+
+
+    
     #header_content #cart_info a:link, #header_content #cart_info a:visited {
         color: white;
         text-decoration: none;
@@ -420,7 +475,6 @@ nav {
     width: 940px;
     height: 70px;
     margin: 0 20px;
-    border-bottom: double #C8C3C1;
 }
 
     nav ul {
@@ -519,9 +573,12 @@ nav {
     }
 
 #banners {
-    width: 1200px;
+    width: 944px;
     margin: 0 0 0 20px;
     position: relative;
+    background-image: url("../img/banners/shirt-special.jpg") ;
+    background-repeat:no-repeat;
+    height:650px;
 }
 
 #home_feature {
@@ -1840,7 +1897,7 @@ ul.payment_methods li {
         }
         
 footer {
-     margin-left: 259px;
+     margin-left: 185px;
     margin-top: 8px;
    
 }
@@ -3054,3 +3111,9 @@ and (max-width : 480px) {
 .icon-filter{background-position:-408px -144px;}
 .icon-briefcase{background-position:-432px -144px;}
 .icon-fullscreen{background-position:-456px -144px;}
+
+
+.body_class{
+	background-image: url("img_tree.gif"), url("img_flwr.gif");
+    background-color: #cccccc;
+}
