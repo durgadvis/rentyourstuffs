@@ -134,6 +134,17 @@
     <!--     <bean id="solrAdminServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer"> -->
     <!--         <constructor-arg value="${solr.url.admin}"/> -->
     <!--     </bean> -->
+    
+    <bean id="solrServer" class="org.apache.solr.client.solrj.impl.LBHttpSolrServer">
+        <constructor-arg value="${solr.url.primary}"/>
+	</bean>
+	<bean id="solrReindexServer" class="org.apache.solr.client.solrj.impl.LBHttpSolrServer">
+	        <constructor-arg value="${solr.url.reindex}"/>
+	</bean>
+	<bean id="solrAdminServer" class="org.apache.solr.client.solrj.impl.LBHttpSolrServer">
+	        <constructor-arg value="${solr.url.admin}"/>
+	</bean>
+    
     <bean id="blSearchService" class="org.broadleafcommerce.core.search.service.solr.SolrSearchServiceImpl">
         <constructor-arg name="solrServer" ref="${solr.source.primary}" />
         <constructor-arg name="reindexServer" ref="${solr.source.reindex}" />
