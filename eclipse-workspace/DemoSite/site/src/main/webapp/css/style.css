@@ -18,8 +18,8 @@ body { margin: 0; font: 12px/18px Georgia, serif; color: #655c5a; background: ur
 ::-moz-selection { background: #E40037; color: #fff; text-shadow: none; }
 ::selection { background: #E40037; color: #fff; text-shadow: none; }
 
-a { color: #ffffff; } 
-a:visited { color: #ffffff; }
+a { color: #E40037; } 
+a:visited { color: #E40037; }
 a:hover { color: #3e0000; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
@@ -47,8 +47,6 @@ nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0
 
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
 
-#homeBanner {height:400px;width:900px;}
-
 svg:not(:root) { overflow: hidden; }
 
 figure { margin: 0; }
@@ -71,7 +69,7 @@ button, input { line-height: normal; }
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; *overflow: visible; }
 button[disabled], input[disabled] { cursor: default; background-color:#d9d9d9; }
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *width: 13px; *height: 13px; border: none; }
-input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; font-size:21px;}
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { -webkit-appearance: none; }
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
@@ -261,13 +259,13 @@ header {
     color: #342020;
     font: 15px/28px 'Open Sans', Helvetica, sans-serif;
     font-weight: 600;
+    border-top: 15px solid #E40037;
 }
 
 #header_content {
     width: 980px;
     margin: 0 auto;
     position: relative;
-    background:#223c4a
 }
 
 #header_content_fixed {
@@ -372,66 +370,11 @@ header {
 
     #header_content #cart_info {
         padding: 10px 20px;
-        background-color: #223c4a;
+        background-color: #E40037;
         color: white;
         text-align: right;
-        
+        float: right;
     }
-    
-    
-    .search-home{
-    width:450px;
-    height:40px;
-    margin:50px auto;
-    font-size: 10pt;
-    }
-    
-   #search-home {
-    float: left;
-    position: absolute;
-    bottom: 270px;
-    left: 166px;
-   }
-   
-   #search-home input[type="submit"]{
-   	font-size:21px;
-   }
-    
-  .search_button-home  {
-    	height:44px;
-    	width:116px;
-        padding:0px 15px;
-        border:2px solid #223c4a;
-        background-color:#223c4a;
-        color:#fffdf9;
-    }
-    
-    .search_button-home:hover  {
-                background-color:#fafafa;
-                color:#223c4a;
-}
-
-ul#nav-menu{
-		margin-left: 250px;
-		padding: 0;
-		font: 12px Verdana;
-		list-style-type: none;
-	
-}
-
-ul#nav-menu li {
-display: inline;
-padding: 11px
-}
-
-ul#nav-menu li a {
-	padding: 5px 30px;
-	border: 1px solid #aaa;
-	color: #223c4a;
-	text-decoration: none;
-}
-
-
     
     #header_content #cart_info a:link, #header_content #cart_info a:visited {
         color: white;
@@ -475,6 +418,7 @@ nav {
     width: 940px;
     height: 70px;
     margin: 0 20px;
+    border-bottom: double #C8C3C1;
 }
 
     nav ul {
@@ -573,12 +517,9 @@ nav {
     }
 
 #banners {
-    width: 944px;
+    width: 940px;
     margin: 0 0 0 20px;
     position: relative;
-    background-image: url("../img/banners/shirt-special.jpg") ;
-    background-repeat:no-repeat;
-    height:650px;
 }
 
 #home_feature {
@@ -1897,55 +1838,16 @@ ul.payment_methods li {
         }
         
 footer {
-     margin-left: 185px;
-    margin-top: 8px;
-   
-}
-
-
-.footer-container{
-	width: 942px;
-	height: 120px;
-    background:#223c4a;
+    width: 940px;
+    background: url(../img/the-heat-clinic-seal.png) top center no-repeat;
+    margin: 40px auto;
     padding: 0 20px;
     padding-bottom: 40px;
     font: 12px/16px 'Georgia', serif;
-    color: #fffdf9;
-	position:relative;
-	margin-bottom: 10px;
-}
-.footer-copyright{
-	position: absolute;
-  	bottom: 5px;
-  	left: 350px;
-  	
+    color: #655c5a;
 }
 
-#social-net, #contact-info{
-list-style-type: none;
-padding-left: 0;	
-}
-
-	
-
-
-.footer-col1{
-	 width: 33%;
-	 float:left;
-	
-}
-
-.footer-col2{
-	 width: 33%;
-	 float:left;
-}
-
-.footer-col3{
-	 width: 33%;
-	 float:left;
-}
-
-	    footer #left_content h4, footer #right_content h4 {
+    footer #left_content h4, footer #right_content h4 {
         font: 12px/17px 'Open Sans', Helvetica, sans-serif;
         font-weight: 600;
         letter-spacing: 5px;
@@ -2660,8 +2562,7 @@ and (max-width : 480px) {
     #header_content #cart_info {margin-right: 10px;}
     #header_content #search {right: 10px;}
     #banners {margin-top: 10px;}
-    #banners img {height: 200px;
-    width: 900px;}
+    #banners img {width: 100%;}
     #banners, nav, #home_feature, #content .title_bar, #products, footer {width: 708px;}
     #home_feature {margin-left: 20px; margin-right: 20px; padding: 10px 0;}
     #products {margin: 15px 10px;}
@@ -3111,9 +3012,3 @@ and (max-width : 480px) {
 .icon-filter{background-position:-408px -144px;}
 .icon-briefcase{background-position:-432px -144px;}
 .icon-fullscreen{background-position:-456px -144px;}
-
-
-.body_class{
-	background-image: url("img_tree.gif"), url("img_flwr.gif");
-    background-color: #cccccc;
-}
