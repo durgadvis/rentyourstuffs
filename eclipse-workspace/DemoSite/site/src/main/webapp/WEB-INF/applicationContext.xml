@@ -266,4 +266,11 @@
     <bean id="blJsResources" parent="siteJsResourceRequestHandlerBase" />
 
     <bean id="blCssResources" parent="siteCssResourceRequestHandlerBase" />
+    
+    <bean id="rysRentalService" class="com.rentyourstuffs.customService.product.RYSRentalTermServiceImpl">
+    </bean>
+    
+    <bean id="rysRentalTermDao" class="com.rentyourstuffs.customDao.product.RYSRentalTermDaoImpl">
+    </bean>
+    
 </beans>

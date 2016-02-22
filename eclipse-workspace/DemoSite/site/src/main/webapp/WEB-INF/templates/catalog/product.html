@@ -4,6 +4,8 @@
     </head>
 
     <div layout:fragment="content">
+    
+    
         
         <section id="left_column" th:object="${product}">
         
@@ -11,15 +13,6 @@
                 <h2 th:utext="*{name}"></h2>
                 
                 <div id="maker" th:utext="*{manufacturer}"></div>
-                
-                <div id="price" th:if="${#object instanceof T(org.broadleafcommerce.core.catalog.domain.ProductBundle)}">
-                    <div blc:price="*{salePrice}" th:if="*{onSale}" th:classappend="*{onSale}? 'sale'"></div>
-                    <div blc:price="*{retailPrice}" th:classappend="*{onSale}? 'has-sale'"></div>
-                </div>
-                <div id="price" th:unless="${#object instanceof T(org.broadleafcommerce.core.catalog.domain.ProductBundle)}">
-                    <div blc:price="*{defaultSku.salePrice}" th:if="*{defaultSku.onSale}" th:classappend="*{defaultSku.onSale}? 'sale'"></div>
-                    <div blc:price="*{defaultSku.retailPrice}" th:classappend="*{defaultSku.onSale}? 'has-sale'"></div>
-                </div>
                 
                 <div class="product-options" th:substituteby="catalog/partials/productOptions"/>                                
                 
@@ -45,17 +38,44 @@
                             </div>
                         </div>
                         
-                        <div th:class="*{'productActions' + id}">
+                        <div class="rent-price" th:if="${#object instanceof T(org.broadleafcommerce.core.catalog.domain.ProductBundle)}">
+		                    <div blc:price="*{salePrice}" th:if="*{onSale}" th:classappend="*{onSale}? 'sale'"></div>
+		                    <div blc:price="*{retailPrice}" th:classappend="*{onSale}? 'has-sale'"></div>
+		                    <div class="rent-term-block">	
+                        	<h4 class="rent-terms-text">Rental Terms</h4>
+	                        <div class="rent-term-inner" th:each="customproduct:${customProduct}">
+	                			<input type="radio" name="days" th:value="${customproduct.rentTerm}">
+		                		<span class="rent-term" th:text="${customproduct.rentTerm}"/> days
+		                		<span class="term-percentage" th:text="${customproduct.termPercentage}"/></input>
+	                		</div>
+                        </div>
+		                </div>
+		                <div class="rent-price" th:unless="${#object instanceof T(org.broadleafcommerce.core.catalog.domain.ProductBundle)}">
+		                 <div class="rent-term-block" th:with="finalRetailPrice=*{defaultSku.retailPrice}">	
+                        	<h4 class="rent-terms-text">Rental Terms</h4>
+	                        <div class="rent-term-inner" th:each="customproduct:${customProduct}">
+	                			<input type="radio" name="days" th:value="${customproduct.rentTerm}">
+		                		<span class="rent-term" th:text="${customproduct.rentTerm}"/> days
+		                		<span class="term-percentage" th:with="rental_amount=${finalRetailPrice.amount*0.01*customproduct.termPercentage}"> 
+		                		₹<span  th:text="${(#numbers.formatDecimal(rental_amount,1,2))}"/> </span></input>
+	                		</div>
+	                		<div class="original-price-text">Original Price :<span class="original-price" th:text="${finalRetailPrice}"></span></div>
+	                		
+	                		<div th:class="*{'productActions' + id}">
                             <div class="in_cart" th:classappend="${!inCart}? ' hidden'">
                                 <a class="modalcart big-button gray-button" th:href="@{/cart}">In Cart!</a>
                             </div>
                             <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
                                 <input type="hidden" name="productId" th:value="*{id}" />
                                 <input type="hidden" name="quantity" value="1" />
-                                <input type="submit" class="addToCart big red" th:value="#{product.buyNow}"/>
+                                <input type="submit" class="addToCart" th:value="#{product.buyNow}"/>
                             </div>
                             <p class="error" th:if="${param.errorMessage}" th:utext="${param.errorMessage[0]}"></p>
                         </div>
+	                		
+                          </div>
+		                </div>
+                        
                     </blc:form>
                 </th:block>
     
@@ -221,7 +241,7 @@
                 </div>          
         </section>
     
-        <section id="right_column">
+       <!--  <section id="right_column">
             <header>Featured Products</header>
             <div id="options">
                 <div class="section">
@@ -231,7 +251,7 @@
                     </ul>
                 </div>                                  
             </div>
-        </section>              
+        </section>   -->            
     </div>
     
 </th:block>
