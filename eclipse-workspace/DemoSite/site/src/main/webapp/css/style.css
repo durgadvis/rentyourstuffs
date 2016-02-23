@@ -1462,15 +1462,15 @@ ul.payment_methods li {
         }
     
 #product_main_image {
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
     margin: 20px 0 0 20px;
     float: left;
 }
 
     #product_main_image img#main_image {
-        width: 400px;
-        max-height: 400px;
+        width: 200px;
+        max-height: 200px;
     }
 
 .product-options {
@@ -1511,7 +1511,7 @@ ul.payment_methods li {
 }
 
 #product_content {
-    width: 280px;
+    width: 450px;
     margin-right: 20px;
     font-size: 13px;
     line-height: 18px;
@@ -1519,6 +1519,7 @@ ul.payment_methods li {
     font-family: Georgia, serif;
     float: right;
     display: inline;
+    height: 400px
 }
 
     #product_content h2 {
@@ -3124,15 +3125,15 @@ and (max-width : 480px) {
 
 
 .rent-price{
-	font-size: 19px;
+	font-size: 16px;
 	color:#223c4a;
 }
 
 .rent-term-block{
 	background-color: #FFF;
-	width: 290px;
-	height: 370px;
-	margin-left: 391px;
+	width: 280px;
+	height: 332px;
+	margin-left: 471px;
 	border:1px solid black;
 	margin-top: -168px;
     position: absolute;
@@ -3142,7 +3143,7 @@ and (max-width : 480px) {
 	margin-left:4px;
 }
 .term-percentage{
-	padding-left: 131px;
+	padding-left: 56px;
     position: absolute;
 }
 .rent-terms-text{
@@ -3154,14 +3155,14 @@ and (max-width : 480px) {
 }
 .rent-term-inner{
 	margin-left:10px;
-	padding-bottom: 14px;
+	padding-bottom: 10px;
 }
 .original-price-text{
 	font-size: 17px;
-    margin-left: 86px;
+    margin-left: 70px;
     padding-top: 19px;
 }
 .original-price{
 	font-size: 17px;
-    padding-left: 30px;
+    padding-left: 20px;
 }

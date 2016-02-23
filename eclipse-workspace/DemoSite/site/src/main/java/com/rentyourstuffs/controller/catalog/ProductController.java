@@ -16,12 +16,22 @@
 
 package com.rentyourstuffs.controller.catalog;
 
-import org.broadleafcommerce.core.web.controller.catalog.BroadleafProductController;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.servlet.ModelAndView;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import org.broadleafcommerce.core.web.controller.catalog.BroadleafProductController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.rentyourstuffs.customService.product.RYSRentalTermService;
+import com.rentyourstuffs.customentities.RYSRentalTerm;
 
 /**
  * This class works in combination with the ProductHandlerMapping which finds a product based upon
@@ -30,9 +40,27 @@ import javax.servlet.http.HttpServletResponse;
 @Controller("blProductController")
 public class ProductController extends BroadleafProductController {
     
+	@Autowired 
+	RYSRentalTermService rysRentalService;
+	
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        return super.handleRequest(request, response);
+      ModelAndView model=   super.handleRequest(request, response);	
+      List<RYSRentalTerm> customProducts=rysRentalService.getRentalTerms();
+      model.addObject("customProduct",customProducts);
+      model.addObject("dueRentalDates",getDueDatesForRentalTerms(customProducts));
+      return model;
+        
     }
+
+	private Map<Integer,Date> getDueDatesForRentalTerms(List<RYSRentalTerm> customProducts) {
+		Map<Integer,Date> rentDates=new HashMap<Integer,Date>();
+		  for(RYSRentalTerm rysRentalTerm:customProducts){
+			  Calendar cal=Calendar.getInstance();
+			  cal.add(Calendar.DATE, rysRentalTerm.getRentTerm());
+			  rentDates.put(rysRentalTerm.getRentTerm(),cal.getTime() );
+		  }
+		  return rentDates;
+	}
 
 }

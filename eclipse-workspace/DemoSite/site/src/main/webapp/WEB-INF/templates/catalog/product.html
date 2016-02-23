@@ -56,6 +56,7 @@
 	                        <div class="rent-term-inner" th:each="customproduct:${customProduct}">
 	                			<input type="radio" name="days" th:value="${customproduct.rentTerm}">
 		                		<span class="rent-term" th:text="${customproduct.rentTerm}"/> days
+		                		(due <span th:text="${#calendars.format(dueRentalDates[customproduct.rentTerm], 'dd MMM')}"/>)
 		                		<span class="term-percentage" th:with="rental_amount=${finalRetailPrice.amount*0.01*customproduct.termPercentage}"> 
 		                		₹<span  th:text="${(#numbers.formatDecimal(rental_amount,1,2))}"/> </span></input>
 	                		</div>
@@ -125,26 +126,6 @@
                 <a th:href="@{*{#strings.replace(media['primary'].url + '?browse', 'jpg?browse', 'jpg')}}" class='jqzoom' id='zoom1' rel="gal1">
                     <img blc:src="@{*{media['primary'].url}+ '?browse'}" alt='' align="left" id="main_image" />
                 </a>
-            </div>
-            
-            <div id="product_thumbs_container">
-                <ul id="product_thumbs" class="clearfix">
-                    <li>
-                        <a th:if="*{media['primary']}" href="javascript:;" class="zoomThumbActive" th:rel="${'{ gallery: ''gal1'', smallimage: ''__@{*{media['primary'].url}+'?browse'}__'', largeimage: ''__@{*{media['primary'].url}}__'' }'}" th:attr="data-tags=*{media['primary'].tags}">
-                            <img blc:src="@{*{media['primary'].url}}" alt="Bottle Closeup" />
-                        </a>
-                        <p th:if="*{#maps.size(media) > 1}" class="thumbs_nav">Swipe to see more... (<span th:utext="'1 of ' + *{#maps.size(media) > 3 ? 3 : #maps.size(media)}"></span>)</p>
-                        
-                    </li>
-                    
-                    <li th:each="media, iterStat : *{media}" th:unless="${media.key == 'primary'}">
-                        <a href="javascript:;"
-                            th:rel="${'{ gallery: ''gal1'', smallimage: ''__@{${media.value.url}+'?browse'}__'', largeimage: ''__@{${media.value.url}}__'' }'}" th:attr="data-tags=${media.value.tags}">
-                            <img blc:src="@{${media.value.url}}" alt="Bottle Closeup" />
-                        </a>
-                        <p class="thumbs_nav" th:utext="${iterStat.count + 1} + ' of ' + *{#maps.size(media) > 3 ? 3 : #maps.size(media)}"></p>
-                    </li>
-                </ul>
             </div>
             
             <div class="clearfix"></div>
