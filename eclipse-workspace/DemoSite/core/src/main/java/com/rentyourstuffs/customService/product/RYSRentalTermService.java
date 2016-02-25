@@ -7,6 +7,8 @@ import com.rentyourstuffs.customentities.RYSRentalTerm;
 public interface RYSRentalTermService {
 
 	public List<RYSRentalTerm> getRentalTerms();
+
+	List<RYSRentalTerm> getTermItemByduration(String rentTerm);
 	
 }
 

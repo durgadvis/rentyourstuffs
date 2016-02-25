@@ -34,6 +34,7 @@
                blRequestFilter,
                blCustomerStateFilter,
                blTranslationFilter,
+               rysDynamicSkuPricingFilter,
                blCartStateFilter,
                blURLHandlerFilter"/>
         </sec:filter-chain-map>

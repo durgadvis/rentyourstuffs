@@ -8,4 +8,6 @@ public interface RYSRentalTermDao {
 
 
 	List<RYSRentalTerm> readRentalTerms();
+	
+	public List<RYSRentalTerm> getTermItemByduration(String rentTerm);
 }

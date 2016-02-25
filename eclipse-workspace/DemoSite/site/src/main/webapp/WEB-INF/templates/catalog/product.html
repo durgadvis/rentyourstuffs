@@ -54,12 +54,15 @@
 		                 <div class="rent-term-block" th:with="finalRetailPrice=*{defaultSku.retailPrice}">	
                         	<h4 class="rent-terms-text">Rental Terms</h4>
 	                        <div class="rent-term-inner" th:each="customproduct:${customProduct}">
-	                			<input type="radio" name="days" th:value="${customproduct.rentTerm}">
+	                			<input type="radio" name="rentTerm" th:value="${customproduct.rentTerm}">
+	                			
 		                		<span class="rent-term" th:text="${customproduct.rentTerm}"/> days
 		                		(due <span th:text="${#calendars.format(dueRentalDates[customproduct.rentTerm], 'dd MMM')}"/>)
 		                		<span class="term-percentage" th:with="rental_amount=${finalRetailPrice.amount*0.01*customproduct.termPercentage}"> 
 		                		₹<span  th:text="${(#numbers.formatDecimal(rental_amount,1,2))}"/> </span></input>
+		                		
 	                		</div>
+	                		<input type="hidden" name="skuId" th:value="*{defaultSku.id}" />
 	                		<div class="original-price-text">Original Price :<span class="original-price" th:text="${finalRetailPrice}"></span></div>
 	                		
 	                		<div th:class="*{'productActions' + id}">

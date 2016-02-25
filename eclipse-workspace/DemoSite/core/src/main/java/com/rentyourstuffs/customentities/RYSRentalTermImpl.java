@@ -9,12 +9,26 @@ import javax.persistence.Table;
 @Table(name="RYS_RENT_TERMS")
 public class RYSRentalTermImpl implements RYSRentalTerm {
 
+	
+	
 	@Id
+	@Column(name="RENT_TERM_ID")
+	protected int rentTermId;
+	
+	
 	@Column(name="RENT_TERM")
 	protected int rentTerm;
 	
 	@Column(name="TERM_PERCENTAGE")
 	protected int termPercentage;
+
+	public int getRentTermId() {
+		return rentTermId;
+	}
+
+	public void setRentTermId(int rentTermId) {
+		this.rentTermId = rentTermId;
+	}
 
 	public int getRentTerm() {
 		return rentTerm;

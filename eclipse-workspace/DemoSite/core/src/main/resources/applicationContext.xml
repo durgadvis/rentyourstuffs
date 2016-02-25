@@ -69,5 +69,15 @@
         <property name="targetRef" value="blPaymentGatewayConfigurationServices"/>
     </bean>
     <!-- /End DemoSite NullPaymentGateway Config -->
+    
+    
+    <bean id="rysRentalService" class="com.rentyourstuffs.customService.product.RYSRentalTermServiceImpl">
+    </bean>
+    
+    <bean id="rysRentalTermDao" class="com.rentyourstuffs.customDao.product.RYSRentalTermDaoImpl">
+    </bean>
+    
+    <bean id="rysDynamicSkuPricingService" class="com.rentyourstuffs.core.catalog.services.dynamic.RYSDynamicSkuPricingServiceImpl">
+    </bean>
 
 </beans>

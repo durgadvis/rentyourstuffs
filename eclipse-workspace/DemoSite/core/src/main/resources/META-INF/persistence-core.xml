@@ -6,7 +6,8 @@
              
     <persistence-unit name="blPU" transaction-type="RESOURCE_LOCAL">
         <non-jta-data-source>jdbc/web</non-jta-data-source>
-         <class>com.rentyourstuffs.customentities.RYSRentalTermImpl</class>
+        <mapping-file>config/bc/jpa/domain/rys.core.orm.xml</mapping-file>
+        <class>com.rentyourstuffs.customentities.RYSRentalTermImpl</class>
         <exclude-unlisted-classes/>
     </persistence-unit>
     
