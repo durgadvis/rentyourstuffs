@@ -8,6 +8,7 @@
         <non-jta-data-source>jdbc/web</non-jta-data-source>
         <mapping-file>config/bc/jpa/domain/rys.core.orm.xml</mapping-file>
         <class>com.rentyourstuffs.customentities.RYSRentalTermImpl</class>
+        <class>com.rentyourstuffs.core.order.domain.RYSOrderItemImpl</class>
         <exclude-unlisted-classes/>
     </persistence-unit>
     

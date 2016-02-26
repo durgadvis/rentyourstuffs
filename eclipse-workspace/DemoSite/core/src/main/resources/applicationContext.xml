@@ -79,5 +79,8 @@
     
     <bean id="rysDynamicSkuPricingService" class="com.rentyourstuffs.core.catalog.services.dynamic.RYSDynamicSkuPricingServiceImpl">
     </bean>
+    
+	<bean p:order="3000" id="blAddOrderItemActivity" class="com.rentyourstuffs.core.order.service.workflow.add.RYSAddOrderItemActivity" >
+    </bean>    
 
 </beans>

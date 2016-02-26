@@ -21,4 +21,6 @@
         <!-- This file will contain bean overrides for extensions of Broadleaf entities -->
         <!-- For example, if you have a custom class that extends CustomerImpl, you would note that here -->
         
+        <bean id="org.broadleafcommerce.core.order.domain.DiscreteOrderItem" class="com.rentyourstuffs.core.order.domain.RYSOrderItemImpl" scope="prototype" />
+        
 </beans>
