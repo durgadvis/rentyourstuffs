@@ -82,5 +82,51 @@
     
 	<bean p:order="3000" id="blAddOrderItemActivity" class="com.rentyourstuffs.core.order.service.workflow.add.RYSAddOrderItemActivity" >
     </bean>    
+    
+    <bean p:order="7000" id="blCompleteOrderActivity" class="com.rentyourstuffs.core.order.service.workflow.add.RYSCompleteOrderActivity">
+        <property name="rollbackHandler" ref="blCompleteOrderRollbackHandler" />
+    </bean>
+    
+    <!-- Pricing Workflow configuration -->
+    
+    <bean p:order="1000" id="rysRepriceOnRentTermActivity" class="com.rentyourstuffs.core.pricing.service.workflow.RYSRepriceBasedOnTerm" />
+    <bean p:order="1999" id="blOfferActivity" class="org.broadleafcommerce.core.pricing.service.workflow.OfferActivity" />
+    <bean p:order="2000" id="blConsolidateFulfillmentFeesActivity" class="org.broadleafcommerce.core.pricing.service.workflow.ConsolidateFulfillmentFeesActivity" />
+    <bean p:order="3000" id="blFulfillmentItemPricingActivity" class="org.broadleafcommerce.core.pricing.service.workflow.FulfillmentItemPricingActivity" />
+    <bean p:order="4000" id="blFulfillmentGroupMerchandiseTotalActivity" class="org.broadleafcommerce.core.pricing.service.workflow.FulfillmentGroupMerchandiseTotalActivity" />
+    <bean p:order="5000" id="blFulfillmentGroupPricingActivity" class="org.broadleafcommerce.core.pricing.service.workflow.FulfillmentGroupPricingActivity" />
+    <bean p:order="6000" id="blShippingOfferActivity" class="org.broadleafcommerce.core.pricing.service.workflow.ShippingOfferActivity" />
+    <bean p:order="7000" id="blTaxActivity" class="org.broadleafcommerce.core.pricing.service.workflow.TaxActivity" />
+    <bean p:order="8000" id="blTotalActivity" class="org.broadleafcommerce.core.pricing.service.workflow.TotalActivity" />
+    <bean p:order="9000" id="blAdjustOrderPaymentsActivity" class="org.broadleafcommerce.core.pricing.service.workflow.AdjustOrderPaymentsActivity" />
+    
+    <bean id="blPricingWorkflow" class="org.broadleafcommerce.core.workflow.SequenceProcessor">
+        <property name="processContextFactory">
+            <bean class="org.broadleafcommerce.core.pricing.service.workflow.PricingProcessContextFactory"/>
+        </property>
+        <property name="activities">
+            <list>
+                <ref bean="rysRepriceOnRentTermActivity" /> 
+                <ref bean="blOfferActivity" />               
+                <ref bean="blConsolidateFulfillmentFeesActivity" />
+                <ref bean="blFulfillmentItemPricingActivity" />                                       
+                <ref bean="blFulfillmentGroupMerchandiseTotalActivity" />
+                <ref bean="blFulfillmentGroupPricingActivity" />
+                <ref bean="blShippingOfferActivity" />
+                <ref bean="blTaxActivity" />
+                <ref bean="blTotalActivity"/>
+                <ref bean="blAdjustOrderPaymentsActivity"/>
+            </list>
+        </property>
+        <property name="defaultErrorHandler">
+            <bean class="org.broadleafcommerce.core.workflow.DefaultErrorHandler">
+                <property name="unloggedExceptionClasses">
+                    <list>
+                        <value>org.hibernate.exception.LockAcquisitionException</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
 
 </beans>
