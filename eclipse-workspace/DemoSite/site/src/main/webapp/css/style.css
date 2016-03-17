@@ -531,7 +531,7 @@ nav {
         background-color: #FFFFFF;
         z-index: 99999;
         display: none;
-        width: 174px;
+        width: 250px;
         top:179px;
         border-left: 1px solid #C8C3C1;
         border-bottom: 1px solid #C8C3C1;
@@ -556,6 +556,7 @@ nav {
         color: #342020;
         padding: 10px;
         background: none;
+        font-weight:bold;
     }
 
     ul.sub-menu li:hover ul.secondary-menu {
@@ -3165,4 +3166,15 @@ and (max-width : 480px) {
 .original-price{
 	font-size: 17px;
     padding-left: 20px;
+}
+
+.cat-menu{
+	width:90px;
+}
+
+.secondary-sub-menu{
+	
+}
+.sub-menu1{
+	font-weight: bold;
 }
