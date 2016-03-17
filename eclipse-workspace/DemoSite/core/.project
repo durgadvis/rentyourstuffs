@@ -33,21 +33,4 @@
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>broadleaf-contentmanagement-module-4.0.2-SNAPSHOT-sources</name>
-			<type>2</type>
-			<location>D:/self/jars/broadleaf-contentmanagement-module-4.0.2-SNAPSHOT-sources</location>
-		</link>
-		<link>
-			<name>broadleaf-framework-4.0.2-SNAPSHOT-source</name>
-			<type>2</type>
-			<location>D:/self/jars/broadleaf-framework-4.0.2-SNAPSHOT-sources</location>
-		</link>
-		<link>
-			<name>broadleaf-profile-4.0.2-SNAPSHOT-sources</name>
-			<type>2</type>
-			<location>D:/self/jars/broadleaf-profile-4.0.2-SNAPSHOT-sources</location>
-		</link>
-	</linkedResources>
 </projectDescription>

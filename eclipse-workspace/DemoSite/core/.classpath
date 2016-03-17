@@ -8,7 +8,6 @@
 	</classpathentry>
 	<classpathentry kind="src" path="broadleaf-profile-4.0.2-SNAPSHOT-sources"/>
 	<classpathentry kind="src" path="broadleaf-framework-4.0.2-SNAPSHOT-source"/>
-	<classpathentry kind="src" path="broadleaf-contentmanagement-module-4.0.2-SNAPSHOT-sources"/>
 	<classpathentry excluding="**" kind="src" output="target/classes" path="src/main/resources">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
