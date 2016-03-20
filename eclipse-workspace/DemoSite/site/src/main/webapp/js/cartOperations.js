@@ -171,8 +171,7 @@ $(function(){
                     	}
                     }
                 }
-
-                $('.simplemodal-wrap').html(data);
+                $('.cart_modal').html(data);
             }
         );
         return false;

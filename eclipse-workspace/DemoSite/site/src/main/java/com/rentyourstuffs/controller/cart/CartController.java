@@ -135,6 +135,7 @@ public class CartController extends BroadleafCartController {
     public String updateQuantity(HttpServletRequest request, HttpServletResponse response, Model model, RedirectAttributes redirectAttributes,
             @ModelAttribute("addToCartItem") AddToCartItem addToCartItem) throws IOException, PricingException, UpdateCartException, RemoveFromCartException {
         try {
+        	model.addAttribute("rentTerms", rysRentalService.getRentalTerms());
             String returnPath = super.updateQuantity(request, response, model, addToCartItem);
             if (isAjaxRequest(request)) {
                 returnPath += " :: ajax";
