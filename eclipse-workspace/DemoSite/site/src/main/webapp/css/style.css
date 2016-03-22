@@ -259,7 +259,7 @@ span.error_spacer {
 header {
     width: 100%;
     color: #342020;
-    font: 15px/28px 'Open Sans', Helvetica, sans-serif;
+    font: 15px/25px 'Open Sans', Helvetica, sans-serif;
     font-weight: 600;
 }
 
@@ -508,9 +508,10 @@ nav {
     }
         
         nav ul li a:link, nav ul li a:visited {
-            color: #342020;
+            color: #FFF;
             text-decoration: none;
             text-transform: uppercase;
+            font-size: 14px;
         }
         
         nav ul li a:hover {
@@ -575,7 +576,7 @@ nav {
 
 #banners {
     width: 944px;
-    margin: 0 0 0 20px;
+    margin: 6px 0 0 20px;
     position: relative;
     background-image: url("../img/banners/shirt-special.jpg") ;
     background-repeat:no-repeat;
@@ -2189,7 +2190,7 @@ and (max-width : 480px) {
             }
             
             nav ul li a:hover {
-                background-color: #E7E3E2;
+                background-color: #FFF;
                 -webkit-transition: background-color 0.2s ease-in;  
                 -moz-transition: background-color 0.2s ease-in;  
                 -o-transition: background-color 0.2s ease-in;  
@@ -3177,4 +3178,8 @@ and (max-width : 480px) {
 }
 .sub-menu1{
 	font-weight: bold;
+}
+#header_logo{
+	margin-left: 9px;
+    margin-top: -57px;
 }

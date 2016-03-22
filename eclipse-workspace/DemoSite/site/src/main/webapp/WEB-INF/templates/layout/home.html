@@ -9,25 +9,30 @@
     <th:block th:replace="/layout/partials/head"></th:block>
 </head>
 
-<body th:class="${'locale-' + session.blLocale.localeCode}">
+<body class="body_class">
     <div id="notification_bar"></div>
     <header th:substituteby="layout/partials/header" />
     
     <div id="content" class="width_setter group" role="main">
-        <nav th:substituteby="layout/partials/nav" />
-        <blc:content contentType="Homepage Banner Ad" />       
-        <div id="banners" th:if="${contentItem !=null and contentItem['targetUrl'] != null and contentItem['imageUrl'] != null}">
-            <a th:href="@{${contentItem['targetUrl']}}"><img blc:src="@{${contentItem['imageUrl']}}" /></a>       
+        
+               
+        <div id="banners">
+        	<div id="search-home">
+	            <blc:form th:action="@{/search}" method="GET" class="search-form">
+	            <input type="search" class="search-home" name="q" th:value="${originalQuery}" />
+	            <input type="submit" id="search_button" class="search_button-home" value="search" />
+	            </blc:form>
+        	</div>
         </div>
         
-        <blc:content contentType="Homepage Middle Promo Snippet" /> 
+         
         
         <a th:href="@{/register}" th:if="${contentItem !=null and contentItem['htmlContent'] !=null}" style="text-decoration:none">
             <div id="home_feature" th:utext="${contentItem['htmlContent']}"></div>
         </a>
-
+		
         
-        <blc:content contentType="Homepage Featured Products Title" />    
+        <!-- <blc:content contentType="Homepage Featured Products Title" />    
         <div th:if="${contentItem !=null and contentItem['messageText'] !=null}" class="title_bar" th:utext="${contentItem['messageText']}"></div>
         
         <ul th:if="${products}" id="products" class="group">
@@ -36,7 +41,8 @@
         
         <ul th:if="${skus}" id="products" class="group">
             <li th:each="sku : ${skus}" th:object="${sku}" th:include="catalog/partials/skuListItem" class="product_container"></li>
-        </ul>
+        </ul> -->
+        
     </div>
     
     <footer th:substituteby="layout/partials/footer" />

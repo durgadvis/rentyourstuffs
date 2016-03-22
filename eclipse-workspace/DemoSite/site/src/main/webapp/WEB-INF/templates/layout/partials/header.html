@@ -21,8 +21,7 @@
                 </a>
                 &nbsp;|&nbsp; 
             </div>
-
-
+			
             <a id="cartLink" class="modalcart" th:href="@{/cart}">
                 <img blc:src="@{/img/shopping_cart.png}" alt="Shopping Cart Icon" />
                 &nbsp; 
@@ -33,38 +32,23 @@
             </a>
 
         </div>
-
-        <div id="languages">
-            <span id="selectedLocale" th:utext="${session.blLocale.localeCode}" style="display: none" />
-
-            <a href="javascript:;" onclick="BLC.addUrlParam(document.location.search, 'blLocaleCode', 'en_US')">
-                <img id="en_US" src="img/flags/United-States.png" blc:src="@{/img/flags/United-States.png}" alt="United States" title="English" />
-            </a>
-
-            <a href="javascript:;" onclick="BLC.addUrlParam(document.location.search, 'blLocaleCode', 'en_GB')">
-                <img id="en_GB" src="img/flags/United-Kingdom.png" blc:src="@{/img/flags/United-Kingdom.png}" alt="United Kingdom" title="English (UK)"/>
-            </a>
-
-            <a  href="javascript:;" onclick="BLC.addUrlParam(document.location.search, 'blLocaleCode', 'es_MX')">
-                <img id="es_MX" src="img/flags/Mexico.png" blc:src="@{/img/flags/Mexico.png}" alt="Mexico" title="Spanish (Mexico)"/>
-            </a>
-
-            <a href="javascript:;" onclick="BLC.addUrlParam(document.location.search, 'blLocaleCode', 'es_ES')">
-                <img id="es_ES" src="img/flags/Mexico.png" blc:src="@{/img/flags/Spain.png}" alt="Spain" title="Spanish (Spain)"/>
-            </a>
-            <a href="javascript:;" onclick="BLC.addUrlParam(document.location.search, 'blLocaleCode', 'fr_FR')">
-                <img id="fr_FR" src="img/flags/Mexico.png" blc:src="@{/img/flags/France.png}" alt="France" title="French (France)" />
-            </a>
-
-        </div>
-
-        <div id="logo"><h1><a th:href="@{/}">The Heat Clinic Home</a></h1></div>
+        <div id="search-home">
+	            <blc:form th:action="@{/search}" method="GET" class="search-form">
+	            <input type="search" class="search-home" name="q" th:value="${originalQuery}" />
+	            <input type="submit" id="search_button" class="search_button-home" value="search" />
+	            </blc:form>
+        	</div>
         
+
+        <div id="header_logo"><h1><a th:href="@{/}">Demo site</a></h1></div>
         <div id="search">
             <blc:form th:action="@{/search}" method="GET">
             <input type="search" class="search" name="q" th:value="${originalQuery}" />
             <input type="submit" id="search_button" value="go" />
             </blc:form>
         </div>
+        
+        <nav th:substituteby="layout/partials/nav" />
+        
     </div>
 </header>
