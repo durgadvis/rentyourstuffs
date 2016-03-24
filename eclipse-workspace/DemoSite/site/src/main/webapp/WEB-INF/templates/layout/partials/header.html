@@ -32,19 +32,14 @@
             </a>
 
         </div>
-        <div id="search-home">
-	            <blc:form th:action="@{/search}" method="GET" class="search-form">
-	            <input type="search" class="search-home" name="q" th:value="${originalQuery}" />
-	            <input type="submit" id="search_button" class="search_button-home" value="search" />
-	            </blc:form>
-        	</div>
+        
         
 
         <div id="header_logo"><h1><a th:href="@{/}">Demo site</a></h1></div>
         <div id="search">
             <blc:form th:action="@{/search}" method="GET">
             <input type="search" class="search" name="q" th:value="${originalQuery}" />
-            <input type="submit" id="search_button" value="go" />
+            <input type="submit" id="search_button" value="search" />
             </blc:form>
         </div>
         

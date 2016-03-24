@@ -264,7 +264,7 @@ header {
 }
 
 #header_content {
-    width: 980px;
+    width: 100%;
     margin: 0 auto;
     position: relative;
     background:#223c4a
@@ -349,25 +349,27 @@ header {
 #header_content #search {
     position: absolute;
     top: 60px;
-    right: 0;
+    right: 100px;
+    padding-right: 10PX;
 }
 
     #header_content #search .search {
-        height: 12px;
+        height: 20px;
         border: 1px solid #D5D1D1;
         padding: 5px 10px;
         display: inline;
+        width: 450px;
     }
     
     #header_content #search #search_button {
-        width: 23px;
-        height: 22px;
-        border: none;
-        margin: 0;
-        padding: 0;
-        background: url(../img/search-button.png) top left no-repeat;
-        text-indent: -5555px;
-        display: inline;
+		    height: 37px;
+    		width: 86px;
+    		padding: 9px 17px;
+		    border: 2px solid #223c4a;
+		    background-color: #FFF;
+		    color: #223c4a;
+		    display: inline;
+		    font-weight: 600;
     }
 
     #header_content #cart_info {
@@ -375,6 +377,7 @@ header {
         background-color: #223c4a;
         color: white;
         text-align: right;
+        margin-right: 100px;
         
     }
     
@@ -391,6 +394,7 @@ header {
     position: absolute;
     bottom: 270px;
     left: 166px;
+    margin-left: 100px;
    }
    
    #search-home input[type="submit"]{
@@ -474,7 +478,7 @@ ul#nav-menu li a {
 nav {
     width: 940px;
     height: 70px;
-    margin: 0 20px;
+    margin: 0px 20px 0px 350px;
 }
 
     nav ul {
@@ -489,6 +493,7 @@ nav {
         padding: 0;
         display: inline;
         float: left;
+        margin-top: -8px;
     }
     
     nav ul li a {
@@ -508,14 +513,15 @@ nav {
     }
         
         nav ul li a:link, nav ul li a:visited {
-            color: #FFF;
+            color: #FFFFFF;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 14px;
         }
         
         nav ul li a:hover {
-            background-color: #E7E3E2;
+            background-color: #FFFFFF;
+            color:#223C4A;
             -webkit-transition: background-color 0.2s ease-in;  
             -moz-transition: background-color 0.2s ease-in;  
             -o-transition: background-color 0.2s ease-in;  
@@ -575,7 +581,7 @@ nav {
     }
 
 #banners {
-    width: 944px;
+    width: 1120px;
     margin: 6px 0 0 20px;
     position: relative;
     background-image: url("../img/banners/shirt-special.jpg") ;
@@ -602,7 +608,7 @@ nav {
     }
 
 #content, #checkout_content {
-    width: 980px;
+    width: 1200px;
     margin-top: -5px;
     background-color: #fff;
     padding-bottom: 30px;
@@ -611,6 +617,7 @@ nav {
     box-shadow: 0px 2px 7px #C2B9B3;
     z-index: 1;
     display: block;
+    margin-left: 70px;
 }
 
     #content .title_bar, #checkout_content .title_bar{
@@ -1901,14 +1908,14 @@ ul.payment_methods li {
         }
         
 footer {
-     margin-left: 185px;
-    margin-top: 8px;
+    /*  margin-left: 185px;
+    margin-top: 8px; */
    
 }
 
 
 .footer-container{
-	width: 942px;
+	width: 100%;
 	height: 120px;
     background:#223c4a;
     padding: 0 20px;
@@ -1927,7 +1934,7 @@ footer {
 
 #social-net, #contact-info{
 list-style-type: none;
-padding-left: 0;	
+padding-left: 66px;	
 }
 
 	
@@ -3121,7 +3128,7 @@ and (max-width : 480px) {
 
 .body_class{
 	background-image: url("img_tree.gif"), url("img_flwr.gif");
-    background-color: #cccccc;
+    /* background-color: #cccccc; */
 }
 
 
@@ -3180,6 +3187,6 @@ and (max-width : 480px) {
 	font-weight: bold;
 }
 #header_logo{
-	margin-left: 9px;
+	margin-left: 70px;
     margin-top: -57px;
 }
