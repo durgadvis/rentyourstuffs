@@ -270,4 +270,7 @@
     <bean id="rysDynamicSkuPricingFilter" class="com.rentyourstuffs.core.web.catalog.RYSDynamicSkuPricingFilter">
     </bean>
     
+    <bean id="rysDynamicSkuPricingService" class="com.rentyourstuffs.core.catalog.services.dynamic.RYSDynamicSkuPricingServiceImpl">
+    </bean>
+    
 </beans>

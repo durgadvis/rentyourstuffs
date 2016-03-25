@@ -12,7 +12,11 @@ import org.broadleafcommerce.core.catalog.domain.Sku;
 import org.broadleafcommerce.core.catalog.domain.SkuBundleItem;
 import org.broadleafcommerce.core.catalog.service.dynamic.DynamicSkuPrices;
 import org.broadleafcommerce.core.catalog.service.dynamic.DynamicSkuPricingService;
+import org.broadleafcommerce.core.order.domain.DiscreteOrderItem;
+import org.broadleafcommerce.core.order.domain.Order;
+import org.broadleafcommerce.core.order.domain.OrderItem;
 import org.springframework.stereotype.Service;
+import org.broadleafcommerce.core.web.order.CartState;
 
 import com.rentyourstuffs.customService.product.RYSRentalTermService;
 import com.rentyourstuffs.customentities.RYSRentalTerm;
@@ -47,9 +51,10 @@ public class RYSDynamicSkuPricingServiceImpl implements
 		
 		Money retailPrice = null;
         Money salePrice = null;
-        if(skuPricingConsiderations != null && skuPricingConsiderations.get("rentTerm") != null)
+        DynamicSkuPrices prices = new DynamicSkuPrices();
+        if(skuPricingConsiderations != null && skuPricingConsiderations.get(sku.getId().toString()) != null)
         {
-        	String rentTerm = (String)skuPricingConsiderations.get("rentTerm");
+        	String rentTerm = (String)skuPricingConsiderations.get(sku.getId().toString());
         	if(rentTerm != null)
         	{
         		List<RYSRentalTerm> termItemByduration = rentalTermService.getTermItemByduration(rentTerm);
@@ -61,12 +66,29 @@ public class RYSDynamicSkuPricingServiceImpl implements
         			BigDecimal termPrice = new BigDecimal((actualPrice.getAmount().doubleValue() * termPercentage) / 100);
         			salePrice = new Money(termPrice);
         			retailPrice = new Money(termPrice);
+        			prices.setSalePrice(salePrice);
+        			prices.setRetailPrice(retailPrice);
+        			return prices;
         		}
         	}
         }
-        DynamicSkuPrices prices = new DynamicSkuPrices();
-        prices.setRetailPrice(retailPrice);
-        prices.setSalePrice(salePrice);
+        //if it is new item
+        
+        Order cart = CartState.getCart();
+        List<OrderItem> orderItems = cart.getOrderItems();
+        for(OrderItem orderItem : orderItems)
+        {
+        	if(orderItem instanceof DiscreteOrderItem)
+        	{
+        		DiscreteOrderItem disItem = (DiscreteOrderItem)orderItem;
+        		if(disItem.getSku().getId().equals(sku.getId()))
+        		{
+        			prices.setRetailPrice(disItem.getRetailPrice());
+        	        prices.setSalePrice(disItem.getSalePrice());
+        		}
+        	}
+        }
+        
         return prices;
 	}
 

@@ -40,7 +40,7 @@ public class RYSDynamicSkuPricingFilter extends AbstractDynamicSkuPricingFilter 
 				Money price = skuItem.getPrice();
 				pricingConsiderations.put("defaultPrice", price);
 			}
-			pricingConsiderations.put("rentTerm", rentTerm);
+			pricingConsiderations.put(skuId, rentTerm);
 		}
 		return pricingConsiderations;
 	}
