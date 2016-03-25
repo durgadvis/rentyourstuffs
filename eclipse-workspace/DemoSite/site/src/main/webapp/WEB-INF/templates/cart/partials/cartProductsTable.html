@@ -2,7 +2,7 @@
     <thead>
         <tr>
             <th colspan="2"><span th:utext="#{cart.item}">Item</span></th>
-            <th><span th:utext="#{cart.quantity}">Quantity</span></th>
+            <th><span th:utext="#{cart.rentTerm}">Rental Term</span></th>
             <th> <span th:utext="#{cart.price}">Price</span> <span class="small" th:utext="#{cart.each}">(each)</span></th>
             <th> <span th:utext="#{cart.totalSavings}">Total Savings</span></th>
             <th><span th:utext="#{cart.total}">Total</span></th>
@@ -51,7 +51,7 @@
 
                      </option>
                     </select>
-                    <input type="hidden" name="quantity" th:value="3" /><br />
+                    <input type="hidden" name="quantity" th:value="1" /><br />
                     <input type="submit" class="updateQuantity" th:value="#{cart.update}"/>
                 </blc:form>
                 <a th:unless="${@blSystemPropertiesService.resolveBooleanSystemProperty('solr.index.use.sku')}" class="cartLinkBtn remove_from_cart" th:href="@{/cart/remove(orderItemId=*{id}, productId=*{product.id})}"><span th:utext="#{cart.remove}">Remove</span></a>

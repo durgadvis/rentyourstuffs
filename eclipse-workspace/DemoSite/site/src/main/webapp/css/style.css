@@ -539,7 +539,6 @@ nav {
         z-index: 99999;
         display: none;
         width: 250px;
-        top:179px;
         border-left: 1px solid #C8C3C1;
         border-bottom: 1px solid #C8C3C1;
         border-right: 1px solid #C8C3C1;
@@ -1928,13 +1927,13 @@ footer {
 .footer-copyright{
 	position: absolute;
   	bottom: 5px;
-  	left: 350px;
+  	left: 471px;
   	
 }
 
-#social-net, #contact-info{
+.social-net, .contact-info{
 list-style-type: none;
-padding-left: 66px;	
+padding-left: 50px;	
 }
 
 	
@@ -1952,7 +1951,7 @@ padding-left: 66px;
 }
 
 .footer-col3{
-	 width: 33%;
+	 width: 27%;
 	 float:left;
 }
 
