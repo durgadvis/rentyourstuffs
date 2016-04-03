@@ -26,7 +26,7 @@
                     <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" align="left" style="margin-right:7px;" alt="Submit Form" />
                 </form>
                 <div class="clearfix"></div>
-                <a th:href="@{/}" target="_top">&laquo; <span th:utext="#{cart.continueShopping}">Continue Shopping</span></a>
+                <a class="cont-shop" th:href="@{/}" target="_top">&laquo; <span th:utext="#{cart.continueShopping}">Continue Shopping</span></a>
             </p>
         </div>
         <p class="error" th:if="${param.errorMessage}" th:utext="${param.errorMessage[0]}"></p>

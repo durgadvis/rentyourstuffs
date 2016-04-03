@@ -235,7 +235,7 @@ span.error_spacer {
    ========================================================================== */
 
 .width_setter {
-    width: 980px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -500,7 +500,7 @@ nav {
         font: 16px/76px 'Open Sans', Helvetica, sans-serif;
         font-weight: 600;
         color: #342020;
-        padding: 25px 30px;
+        padding: 15px 25px;
         background: url('../img/nav-divider.png') top left no-repeat;
     }
     
@@ -538,7 +538,7 @@ nav {
         background-color: #FFFFFF;
         z-index: 99999;
         display: none;
-        width: 250px;
+        width: 650px;
         border-left: 1px solid #C8C3C1;
         border-bottom: 1px solid #C8C3C1;
         border-right: 1px solid #C8C3C1;
@@ -548,7 +548,23 @@ nav {
         display: block;
         float: none;
     }
-
+    nav ul li ul.sub-menu li a:hover{
+    	border:1px solid #223C4A;
+    }
+    
+    nav ul li ul li ul.secondary-sub-menu{
+    
+    
+    }
+	
+	nav ul li ul li ul.secondary-sub-menu li:hover{
+    	color:#FFF;
+        -webkit-transition: background-color 0.1s ease-in;
+        -moz-transition: background-color 0.1s ease-in;
+        -o-transition: background-color 0.1s ease-in;
+        transition: background-color 0.1s ease-in;
+    }
+    
     nav ul li ul.sub-menu li:hover {
         background-color: #E7E3E2;
         -webkit-transition: background-color 0.1s ease-in;
@@ -607,7 +623,7 @@ nav {
     }
 
 #content, #checkout_content {
-    width: 1200px;
+    width: 1047px;
     margin-top: -5px;
     background-color: #fff;
     padding-bottom: 30px;
@@ -618,6 +634,21 @@ nav {
     display: block;
     margin-left: 70px;
 }
+
+	.content_cat{
+		width: 1050px;
+	    margin-top: -5px;
+	    background-color: #fff;
+	    padding-bottom: 30px;
+	    -moz-box-shadow: 0px 2px 7px #C2B9B3;
+	    -webkit-box-shadow: 0px 2px 7px #C2B9B3;
+	    box-shadow: 0px 2px 7px #C2B9B3;
+	    z-index: 1;
+	    display: block;
+	    margin-left: 0px;
+	
+	}
+
 
     #content .title_bar, #checkout_content .title_bar{
         width: 940px;
@@ -1061,6 +1092,10 @@ li.promotion,  ul.promotion{
     
         #cart_products tbody tr td.name a {
             text-decoration: none;
+            color: #223C4A;
+        }
+        .updateQuantity{
+        color: #fff;
         }
     
     #cart_products tbody tr td.value {
@@ -1249,8 +1284,8 @@ li.promotion,  ul.promotion{
 #cart_promo {
     width: 900px;
     padding: 10px;
-    background-color: #3e0000;
-    color: #fff;
+    background-color: #F6F4ED;
+    color: #223C4A;
     float: left;
     display: block;
 }
@@ -1411,12 +1446,19 @@ ul.payment_methods li {
 }
 
 #left_column {
-    width: 740px;
+    width: 1000px;
     float: left;
+    margin-left:4px;
+}
+
+
+#left_column_pdp {
+	margin-top:25px;
+	width: 71%;
 }
 
     #left_column header {
-        width: 700px;
+        width: 966px;
         margin-top: 20px;
         padding: 0 20px;
         border: none;
@@ -1580,13 +1622,15 @@ ul.payment_methods li {
         margin: 10px 0 0 0;
     }
     
-#products {
-    width: 100%;
-    margin-bottom: 0;
-    padding: 0;
-    list-style: none;
-    display: block;
-}
+	#products {
+	    width: 1000px;
+	    margin-bottom: 0;
+	    padding: 0;
+	    list-style: none;
+	    display: block;
+	    float: left;
+	    margin-left: 25px;
+	}
 
     #products li {
         width: 220px;
@@ -1927,7 +1971,7 @@ footer {
 .footer-copyright{
 	position: absolute;
   	bottom: 5px;
-  	left: 471px;
+  	left: 450px;
   	
 }
 
@@ -1936,6 +1980,9 @@ list-style-type: none;
 padding-left: 50px;	
 }
 
+.cont-shop{
+	color:#223C4A;
+}
 	
 
 
@@ -2049,7 +2096,7 @@ input[type="submit"].small, a.small-button {
 
 input[type="submit"].red, a.red-button, a.addToCart, .addToCart {
     color: white;
-    background-color: #E40037;
+    /* background-color: #E40037; */
 }
 
 input[type="submit"].dark, a.dark-button, #featured_products .addToCart {
@@ -2075,7 +2122,7 @@ input[type="submit"].small:hover, a.small-button:hover,
 }
 
 input[type="submit"].red:hover, a.red-button:hover, .addToCart:hover {
-    background-color: #a50832;
+    /* background-color: #a50832; */
 }
 
 input[type="submit"].gray:hover, a.gray-button:hover, a.inCart:hover {
@@ -2234,6 +2281,7 @@ and (max-width : 480px) {
         font: bold 18px/24px Helvetica, sans-serif;
         color: #262322;
         display: block;
+        margin-left: 25px;
     }
     
     #left_column header #sort {
@@ -3139,11 +3187,11 @@ and (max-width : 480px) {
 
 .rent-term-block{
 	background-color: #FFF;
-	width: 280px;
-	height: 332px;
-	margin-left: 471px;
-	border:1px solid black;
-	margin-top: -168px;
+    width: 330px;
+    height: 332px;
+    margin-left: 441px;
+    border: 1px solid black;
+    margin-top: -139px;
     position: absolute;
 }
 
