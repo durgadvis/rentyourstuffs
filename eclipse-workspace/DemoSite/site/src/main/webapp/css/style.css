@@ -258,13 +258,14 @@ span.error_spacer {
 
 header {
     width: 100%;
-    color: #342020;
+    color: #223C4A
     font: 15px/25px 'Open Sans', Helvetica, sans-serif;
     font-weight: 600;
 }
 
 #header_content {
     width: 100%;
+    height:110px
     margin: 0 auto;
     position: relative;
     background:#223c4a
@@ -349,7 +350,7 @@ header {
 #header_content #search {
     position: absolute;
     top: 60px;
-    right: 100px;
+    right: 189px;
     padding-right: 10PX;
 }
 
@@ -358,7 +359,7 @@ header {
         border: 1px solid #D5D1D1;
         padding: 5px 10px;
         display: inline;
-        width: 450px;
+        width: 390px;
     }
     
     #header_content #search #search_button {
@@ -370,7 +371,14 @@ header {
 		    color: #223c4a;
 		    display: inline;
 		    font-weight: 600;
+		    position: absolute;
+		    margin-left: 413px;
+    		margin-top: -34px;
     }
+
+	#search_button{
+		margin-bottom:2px;
+	}
 
     #header_content #cart_info {
         padding: 10px 20px;
@@ -538,27 +546,32 @@ nav {
         background-color: #FFFFFF;
         z-index: 99999;
         display: none;
-        width: 650px;
-        border-left: 1px solid #C8C3C1;
-        border-bottom: 1px solid #C8C3C1;
-        border-right: 1px solid #C8C3C1;
+        width: 513px;
+        height:180px;
+        border: 1px solid #223C4A;
     }
 
     nav ul li ul.sub-menu li {
-        display: block;
-        float: none;
+        float: left;
     }
     nav ul li ul.sub-menu li a:hover{
-    	border:1px solid #223C4A;
+    	
     }
     
     nav ul li ul li ul.secondary-sub-menu{
     
     
     }
+    
+    nav ul li ul li ul.secondary-sub-menu li{
+     	display: block;
+        float: none;
+        margin-top: 0px;
+    }
 	
 	nav ul li ul li ul.secondary-sub-menu li:hover{
     	color:#FFF;
+    	border:1px solid #223C4A;
         -webkit-transition: background-color 0.1s ease-in;
         -moz-transition: background-color 0.1s ease-in;
         -o-transition: background-color 0.1s ease-in;
@@ -566,7 +579,7 @@ nav {
     }
     
     nav ul li ul.sub-menu li:hover {
-        background-color: #E7E3E2;
+        /* background-color: #E7E3E2; */
         -webkit-transition: background-color 0.1s ease-in;
         -moz-transition: background-color 0.1s ease-in;
         -o-transition: background-color 0.1s ease-in;
@@ -574,11 +587,18 @@ nav {
     }
 
     nav ul li ul.sub-menu a {
-        font: 12px/35px 'Open Sans', Helvetica, sans-serif;
-        color: #342020;
+        font: 11px/25px 'Open Sans', Helvetica, sans-serif;
+        color: #223C4A;
         padding: 10px;
         background: none;
         font-weight:bold;
+    }
+    
+    nav ul li ul li ul.secondary-sub-menu a {
+        font: 10px/25px 'Open Sans', Helvetica, sans-serif;
+        color: #223C4A;
+        padding: 10px;
+        background: none;
     }
 
     ul.sub-menu li:hover ul.secondary-menu {
@@ -3235,5 +3255,5 @@ and (max-width : 480px) {
 }
 #header_logo{
 	margin-left: 70px;
-    margin-top: -57px;
+    margin-bottom: -43px;
 }
