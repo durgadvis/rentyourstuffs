@@ -44,12 +44,13 @@
                     <input type="hidden" name="skuId" th:value="*{sku.id}" />
                     <input type="hidden" name="orderItemId" th:value="*{id}" />
                     <select id="rentTerm" name="rentTerm" >
-                    
+                   <span th:with="selectedRentTerm=*{rentTerm}">
                     <option th:each="state : ${rentTerms}"
                             th:value="${state.rentTerm}"
-                            th:utext="${state.rentTerm}">
-
+                            th:utext="${state.rentTerm}"
+                            th:selected="${state.rentTerm==selectedRentTerm}">
                      </option>
+                     </span>
                     </select>
                     <input type="hidden" name="quantity" th:value="1" /><br />
                     <input type="submit" class="updateQuantity" th:value="#{cart.update}"/>

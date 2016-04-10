@@ -546,8 +546,13 @@ nav {
         z-index: 99999;
         display: none;
         width: 513px;
-        height:180px;
-        border: 1px solid #223C4A;
+        height: 180px;
+        border-left: 1px solid #223C4A;
+        border-right: 1px solid #223C4A;
+        border-bottom: 1px solid #223C4A;
+        margin-top:-14px;
+        padding-top:25px;
+        margin-left:-1px;
     }
 
     nav ul li ul.sub-menu li {
@@ -557,9 +562,9 @@ nav {
     	
     }
     
-    nav ul li ul li ul.secondary-sub-menu{
-    
-    
+    nav ul li ul li ul.secondary-sub-menu a{
+		border:none;   
+		text-decoration: none;
     }
     
     nav ul li ul li ul.secondary-sub-menu li{
@@ -591,6 +596,12 @@ nav {
         padding: 10px;
         background: none;
         font-weight:bold;
+        text-decoration:underline;
+    }
+    
+    nav > ul > li:hover >a {
+    	background-color: #fff;
+    	color:#223C4A;
     }
     
     nav ul li ul li ul.secondary-sub-menu a {
@@ -599,7 +610,17 @@ nav {
         padding: 10px;
         background: none;
     }
-
+		
+	.arrow-down {
+		width: 0; 
+		height: 0; 
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		
+		border-top: 20px solid #f00;
+		}
+		
+		
     ul.sub-menu li:hover ul.secondary-menu {
         display: inline;
     }
@@ -1106,6 +1127,7 @@ li.promotion,  ul.promotion{
     
         #cart_products tbody tr td .cartLinkBtn {
             font-size: 11px;
+            color:#223C4A;
         }
     
     #cart_products tbody tr td.name {
