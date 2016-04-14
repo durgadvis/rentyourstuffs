@@ -3230,13 +3230,13 @@ and (max-width : 480px) {
 }
 
 .rent-term-block{
-	background-color: #FFF;
+    background-color: #FFF;
     width: 330px;
     height: 332px;
-    margin-left: 441px;
+    right: 114px;
     border: 1px solid black;
-    margin-top: -139px;
     position: absolute;
+    top: 150px;
 }
 
 .rent-term{
