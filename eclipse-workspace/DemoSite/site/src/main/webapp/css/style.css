@@ -1629,7 +1629,7 @@ ul.payment_methods li {
     font-family: Georgia, serif;
     float: right;
     display: inline;
-    height: 400px
+
 }
 
     #product_content h2 {
@@ -3296,4 +3296,29 @@ and (max-width : 480px) {
 #header_logo{
 	margin-left: 70px;
     margin-bottom: -43px;
+}
+.product-details-pdp{
+	font: 20px/45px 'Oxygen';
+    font-weight: 600;
+    font-family: "SourceSansPro";
+    color: #406786;
+}
+
+.product-attribute-section dt{
+	float:left;
+	font-weight: 600;
+}
+.product-attribute-section dd{
+	margin:0 0 0 96px;
+}
+
+.add_to_wishlist{
+	margin-top:40px;
+}
+.share-product{
+	margin-top:30px;
+}
+
+.by-maker{
+	display:inline;
 }

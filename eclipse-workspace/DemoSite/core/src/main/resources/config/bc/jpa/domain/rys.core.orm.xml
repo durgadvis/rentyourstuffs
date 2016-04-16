@@ -29,5 +29,13 @@
                WHERE rysRentalTerm.rentTerm = :rentTerm
         </query>
     </named-query>
-
+	
+	<named-query name="BC_READ_PRODUCT_ATTRIBUTE_BY_PRODUCT_ID" >
+        <query>SELECT rysProductAttribute
+               FROM org.broadleafcommerce.core.catalog.domain.ProductAttributeImpl rysProductAttribute
+               WHERE rysProductAttribute.product.id = :product_id
+        </query>
+    </named-query>
+	
+	
 </entity-mappings>

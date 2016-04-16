@@ -11,9 +11,10 @@
         
             <div id="product_content" class="product_container">
                 <div>
-                	<h2 th:utext="*{name}"></h2>
-	                <div id="maker" th:utext="*{manufacturer}"></div>
+                	<h2 th:utext="*{name}"></h2> 
+                	<h4 class="by-maker">by</h4><div id="maker" style="display:inline;margin-left:7px" th:utext="*{manufacturer}"></div>
 	                <div th:utext="*{longDescription}" id="description"></div>
+	                <div th:include="catalog/partials/productAttributes"> </div>
                 </div>
                 <div class="product-options" th:substituteby="catalog/partials/productOptions"/>                             
                 
@@ -111,7 +112,7 @@
                     </blc:form>
                 </div>
                     
-                <p>
+                <p class="share-product">
                     Share this Product:
                     <div class="addthis_toolbox addthis_default_style addthis_32x32_style">
                         <a class="addthis_button_preferred_1"></a>

@@ -9,6 +9,9 @@ public interface RYSRentalTermService {
 	public List<RYSRentalTerm> getRentalTerms();
 
 	List<RYSRentalTerm> getTermItemByduration(String rentTerm);
+
+	public Object getDueDatesForRentalTerms(
+			List<RYSRentalTerm> rentTermForProduct);
 	
 }
 

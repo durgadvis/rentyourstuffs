@@ -1,0 +1,8 @@
+					
+	<span class="product-details-pdp">Product Details</span> 				
+	<div class="product-attribute-section">				
+		<dl th:each="productAttribute:${productAttributes}" th:object="${productAttribute}">
+	         	<dt th:text="*{name}"></dt>
+	         	<dd th:text="*{value}"></dd>
+		</dl>
+	</div>

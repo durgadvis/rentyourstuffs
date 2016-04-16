@@ -77,7 +77,11 @@
     <bean id="rysRentalTermDao" class="com.rentyourstuffs.customDao.product.RYSRentalTermDaoImpl">
     </bean>
     
+    <bean id="rysProductAttributeService" class="com.rentyourstuffs.customService.product.RYSProductAttributeServiceImpl">
+    </bean>
     
+    <bean id="rysProductAttributeDao" class="com.rentyourstuffs.customDao.product.RYSProductAttributeDaoImpl">
+    </bean>
     
 	<bean p:order="3000" id="blAddOrderItemActivity" class="com.rentyourstuffs.core.order.service.workflow.add.RYSAddOrderItemActivity" >
     </bean>    

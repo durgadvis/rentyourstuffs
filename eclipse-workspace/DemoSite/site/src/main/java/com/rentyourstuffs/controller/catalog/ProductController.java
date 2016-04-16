@@ -22,14 +22,18 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.broadleafcommerce.core.catalog.domain.Product;
+import org.broadleafcommerce.core.catalog.domain.ProductAttribute;
 import org.broadleafcommerce.core.web.controller.catalog.BroadleafProductController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.rentyourstuffs.customService.product.RYSProductAttributeService;
 import com.rentyourstuffs.customService.product.RYSRentalTermService;
 import com.rentyourstuffs.customentities.RYSRentalTerm;
 
@@ -42,25 +46,23 @@ public class ProductController extends BroadleafProductController {
     
 	@Autowired 
 	RYSRentalTermService rysRentalService;
+	@Resource(name="rysProductAttributeService")
+	RYSProductAttributeService rysProductAttributeService;
+	
 	
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView model=   super.handleRequest(request, response);	
+      Product product=(Product)model.getModel().get("product");
       List<RYSRentalTerm> rentTermForProduct=rysRentalService.getRentalTerms();
+      List<ProductAttribute> productAttributes=rysProductAttributeService.getAllProductAttributesById(product.getId());
       model.addObject("rentTermForProduct",rentTermForProduct);
-      model.addObject("dueRentalDates",getDueDatesForRentalTerms(rentTermForProduct));
+      model.addObject("dueRentalDates",rysRentalService.getDueDatesForRentalTerms(rentTermForProduct));
+      model.addObject("productAttributes",productAttributes);
       return model;
         
     }
 
-	private Map<Integer,Date> getDueDatesForRentalTerms(List<RYSRentalTerm> rentTermForProduct) {
-		Map<Integer,Date> rentDates=new HashMap<Integer,Date>();
-		  for(RYSRentalTerm rysRentalTerm:rentTermForProduct){
-			  Calendar cal=Calendar.getInstance();
-			  cal.add(Calendar.DATE, rysRentalTerm.getRentTerm());
-			  rentDates.put(rysRentalTerm.getRentTerm(),cal.getTime() );
-		  }
-		  return rentDates;
-	}
+	
 
 }
