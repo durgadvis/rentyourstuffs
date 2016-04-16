@@ -46,16 +46,16 @@ public class ProductController extends BroadleafProductController {
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
       ModelAndView model=   super.handleRequest(request, response);	
-      List<RYSRentalTerm> customProducts=rysRentalService.getRentalTerms();
-      model.addObject("customProduct",customProducts);
-      model.addObject("dueRentalDates",getDueDatesForRentalTerms(customProducts));
+      List<RYSRentalTerm> rentTermForProduct=rysRentalService.getRentalTerms();
+      model.addObject("rentTermForProduct",rentTermForProduct);
+      model.addObject("dueRentalDates",getDueDatesForRentalTerms(rentTermForProduct));
       return model;
         
     }
 
-	private Map<Integer,Date> getDueDatesForRentalTerms(List<RYSRentalTerm> customProducts) {
+	private Map<Integer,Date> getDueDatesForRentalTerms(List<RYSRentalTerm> rentTermForProduct) {
 		Map<Integer,Date> rentDates=new HashMap<Integer,Date>();
-		  for(RYSRentalTerm rysRentalTerm:customProducts){
+		  for(RYSRentalTerm rysRentalTerm:rentTermForProduct){
 			  Calendar cal=Calendar.getInstance();
 			  cal.add(Calendar.DATE, rysRentalTerm.getRentTerm());
 			  rentDates.put(rysRentalTerm.getRentTerm(),cal.getTime() );

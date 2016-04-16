@@ -688,6 +688,18 @@ nav {
 	    margin-left: 0px;
 	
 	}
+	.content_search{
+		width: 1050px;
+	    margin-top: -5px;
+	    background-color: #fff;
+	    padding-bottom: 30px;
+	    -moz-box-shadow: 0px 2px 7px #C2B9B3;
+	    -webkit-box-shadow: 0px 2px 7px #C2B9B3;
+	    box-shadow: 0px 2px 7px #C2B9B3;
+	    z-index: 1;
+	    display: block;
+	    margin-left: 0px;
+	}
 
 
     #content .title_bar, #checkout_content .title_bar{
@@ -1501,6 +1513,10 @@ ul.payment_methods li {
 	width: 71%;
 }
 
+#left_column_search{
+	margin-top:25px;
+	width: 71%;
+}
     #left_column header {
         width: 966px;
         margin-top: 20px;

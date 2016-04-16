@@ -15,7 +15,7 @@
 	                <div id="maker" th:utext="*{manufacturer}"></div>
 	                <div th:utext="*{longDescription}" id="description"></div>
                 </div>
-                <div class="product-options" th:substituteby="catalog/partials/productOptions"/>                                
+                <div class="product-options" th:substituteby="catalog/partials/productOptions"/>                             
                 
                 <th:block th:with="checkInventory=*{defaultSku.inventoryType?.type == 'CHECK_QUANTITY'},
                                    availableInventory=${checkInventory ? #object.defaultSku.quantityAvailable != null and #object.defaultSku.quantityAvailable != 0 : true},
@@ -44,22 +44,22 @@
 		                    <div blc:price="*{retailPrice}" th:classappend="*{onSale}? 'has-sale'"></div>
 		                    <div class="rent-term-block">	
                         	<h4 class="rent-terms-text">Rental Terms</h4>
-	                        <div class="rent-term-inner" th:each="customproduct:${customProduct}">
-	                			<input type="radio" name="days" th:value="${customproduct.rentTerm}">
-		                		<span class="rent-term" th:text="${customproduct.rentTerm}"/> days
-		                		<span class="term-percentage" th:text="${customproduct.termPercentage}"/></input>
+	                        <div class="rent-term-inner" th:each="rentTermForProduct:${rentTermForProduct}">
+	                			<input type="radio" name="days" th:value="${rentTermForProduct.rentTerm}">
+		                		<span class="rent-term" th:text="${rentTermForProduct.rentTerm}"/> days
+		                		<span class="term-percentage" th:text="${rentTermForProduct.termPercentage}"/></input>
 	                		</div>
                         </div>
 		                </div>
 		                <div class="rent-price" th:unless="${#object instanceof T(org.broadleafcommerce.core.catalog.domain.ProductBundle)}">
 		                 <div class="rent-term-block" th:with="finalRetailPrice=*{defaultSku.retailPrice}">	
                         	<h4 class="rent-terms-text">Rental Terms</h4>
-	                        <div class="rent-term-inner" th:each="customproduct:${customProduct}">
-	                			<input type="radio" name="rentTerm" th:value="${customproduct.rentTerm}">
+	                        <div class="rent-term-inner" th:each="rentTermForProduct:${rentTermForProduct}">
+	                			<input type="radio" name="rentTerm" th:value="${rentTermForProduct.rentTerm}">
 	                			
-		                		<span class="rent-term" th:text="${customproduct.rentTerm}"/> days
-		                		(due <span th:text="${#calendars.format(dueRentalDates[customproduct.rentTerm], 'dd MMM')}"/>)
-		                		<span class="term-percentage" th:with="rental_amount=${finalRetailPrice.amount*0.01*customproduct.termPercentage}"> 
+		                		<span class="rent-term" th:text="${rentTermForProduct.rentTerm}"/> days
+		                		(due <span th:text="${#calendars.format(dueRentalDates[rentTermForProduct.rentTerm], 'dd MMM')}"/>)
+		                		<span class="term-percentage" th:with="rental_amount=${finalRetailPrice.amount*0.01*rentTermForProduct.termPercentage}"> 
 		                		₹<span  th:text="${(#numbers.formatDecimal(rental_amount,1,2))}"/> </span></input>
 		                		
 	                		</div>
