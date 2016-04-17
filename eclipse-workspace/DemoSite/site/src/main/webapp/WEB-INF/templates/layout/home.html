@@ -17,12 +17,18 @@
         
                
         <div id="banners">
-        	<div id="search-home">
+        	<div class="banner_images">
+        	<!-- <img src="../img/banners/history_banner.jpg" height="250" width="1029"/>
+        	<img src="../img/banners/fiction_banner.jpg" height="250" width="1029"/> -->
+        	<div th:include="layout/partials/homeBannerslide"> </div>
+        	</div>
+        	
+        	<!-- <div id="search-home">
 	            <blc:form th:action="@{/search}" method="GET" class="search-form">
 	            <input type="search" class="search-home" name="q" th:value="${originalQuery}" />
 	            <input type="submit" id="search_button" class="search_button-home" value="search" />
 	            </blc:form>
-        	</div>
+        	</div> -->
         </div>
         
          
@@ -41,7 +47,7 @@
         
         <ul th:if="${skus}" id="products" class="group">
             <li th:each="sku : ${skus}" th:object="${sku}" th:include="catalog/partials/skuListItem" class="product_container"></li>
-        </ul> -->
+        </ul>  -->
         
     </div>
     

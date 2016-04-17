@@ -361,7 +361,7 @@ header {
     }
     
     #header_content #search #search_button {
-		    height: 37px;
+		    height: 36px;
     		width: 86px;
     		padding: 9px 17px;
 		    border: 2px solid #223c4a;
@@ -636,10 +636,10 @@ nav {
     }
 
 #banners {
-    width: 1029px;
-    margin: 6px 0 0 20px;
+    width: 1047px;
+    margin: 6px 0 0 0px;
     position: relative;
-    background-image: url("../img/banners/shirt-special.jpg") ;
+    /* background-image: url("../img/banners/history_banner.jpg") ; */
     background-repeat:no-repeat;
     height:650px;
 }
@@ -654,13 +654,45 @@ nav {
     background-color: #E7E3E2;
 }
 
-    #home_feature h2 {
+#home_feature h2 {
         font: 19px/17px 'Open Sans', Helvetica, sans-serif;
         font-weight: 600;
         color: #E40037;
         margin: 0;
         padding: 0;
-    }
+  }
+ .banner-main-container{
+ 	position: relative;
+ 	margin: 0 auto; 
+ 	top: 0px; 
+ 	left: 0px; 
+ 	width: 1047px; 
+ 	height: 450px; 
+ 	overflow: hidden;
+ 	visibility: hidden;
+ } 
+  
+.banner-slide-container{
+	cursor: default; 
+	position: relative;
+	top: 0px; left: 0px;
+	width: 1047px;
+	height: 450px;
+	overflow: hidden;
+}
+
+.banner-slide-caption{
+	position: absolute;
+	top: 320px;
+	left: 30px; 
+	width: 350px; 
+	height: 30px; 
+	font-size: 20px; 
+	color: #ffffff; 
+	line-height: 30px;
+	text-align: center;
+}
+
 
 #content, #checkout_content {
     width: 1047px;
