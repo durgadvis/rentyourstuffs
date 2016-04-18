@@ -23,22 +23,19 @@ import com.rentyourstuffs.customService.product.RYSRentalTermService;
 import com.rentyourstuffs.customentities.RYSRentalTerm;
 
 @Service("rysDynamicSkuPricingService")
-public class RYSDynamicSkuPricingServiceImpl implements
-		DynamicSkuPricingService {
+public class RYSDynamicSkuPricingServiceImpl implements DynamicSkuPricingService {
 
 	@Resource(name = "rysRentalService")
 	RYSRentalTermService rentalTermService;
 
 	@Override
-	public DynamicSkuPrices getPriceAdjustment(ProductOptionValueImpl arg0,
-			Money arg1, HashMap arg2) {
+	public DynamicSkuPrices getPriceAdjustment(ProductOptionValueImpl arg0, Money arg1, HashMap arg2) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DynamicSkuPrices getSkuBundleItemPrice(SkuBundleItem arg0,
-			HashMap arg1) {
+	public DynamicSkuPrices getSkuBundleItemPrice(SkuBundleItem arg0, HashMap arg1) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -46,32 +43,24 @@ public class RYSDynamicSkuPricingServiceImpl implements
 	/*
 	 * (non-Javadoc)
 	 * 
-	 * @see
-	 * org.broadleafcommerce.core.catalog.service.dynamic.DynamicSkuPricingService
-	 * #getSkuPrices(org.broadleafcommerce.core.catalog.domain.Sku,
-	 * java.util.HashMap)
+	 * @see org.broadleafcommerce.core.catalog.service.dynamic.DynamicSkuPricingService
+	 * #getSkuPrices(org.broadleafcommerce.core.catalog.domain.Sku, java.util.HashMap)
 	 */
 	@Override
-	public DynamicSkuPrices getSkuPrices(Sku sku,
-			@SuppressWarnings("rawtypes") HashMap skuPricingConsiderations) {
+	public DynamicSkuPrices getSkuPrices(Sku sku, @SuppressWarnings("rawtypes") HashMap skuPricingConsiderations) {
 
 		Money retailPrice = null;
 		Money salePrice = null;
 		DynamicSkuPrices prices = new DynamicSkuPrices();
-		if (skuPricingConsiderations != null
-				&& skuPricingConsiderations.get(sku.getId().toString()) != null) {
-			String rentTerm = (String) skuPricingConsiderations.get(sku.getId()
-					.toString());
+		if (skuPricingConsiderations != null && skuPricingConsiderations.get(sku.getId().toString()) != null) {
+			String rentTerm = (String) skuPricingConsiderations.get(sku.getId().toString());
 			if (rentTerm != null) {
-				List<RYSRentalTerm> termItemByduration = rentalTermService
-						.getTermItemByduration(rentTerm);
+				List<RYSRentalTerm> termItemByduration = rentalTermService.getTermItemByduration(rentTerm);
 				if (termItemByduration != null && !termItemByduration.isEmpty()) {
 					RYSRentalTerm rysRentalTerm = termItemByduration.get(0);
 					int termPercentage = rysRentalTerm.getTermPercentage();
-					Money actualPrice = (Money) skuPricingConsiderations
-							.get("defaultPrice");
-					BigDecimal termPrice = new BigDecimal((actualPrice
-							.getAmount().doubleValue() * termPercentage) / 100);
+					Money actualPrice = (Money) skuPricingConsiderations.get("defaultPrice");
+					BigDecimal termPrice = new BigDecimal((actualPrice.getAmount().doubleValue() * termPercentage) / 100);
 					salePrice = new Money(termPrice);
 					retailPrice = new Money(termPrice);
 					prices.setSalePrice(salePrice);
