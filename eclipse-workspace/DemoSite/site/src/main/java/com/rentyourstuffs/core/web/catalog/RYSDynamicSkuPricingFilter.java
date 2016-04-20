@@ -41,8 +41,6 @@ public class RYSDynamicSkuPricingFilter extends AbstractDynamicSkuPricingFilter 
 				pricingConsiderations.put("defaultPrice", price);
 			}
 			pricingConsiderations.put(skuId, rentTerm);
-		}else{
-			pricingConsiderations = new HashMap();
 		}
 		return pricingConsiderations;
 	}
