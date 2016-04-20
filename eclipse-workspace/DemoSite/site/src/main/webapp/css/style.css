@@ -18,8 +18,8 @@ body { margin: 0; font: 12px/18px Georgia, serif; color: #655c5a; background: ur
 ::-moz-selection { background: #E40037; color: #fff; text-shadow: none; }
 ::selection { background: #E40037; color: #fff; text-shadow: none; }
 
-a { color: #ffffff; } 
-a:visited { color: #ffffff; }
+a { color: #223C4A; } 
+a:visited { color: #884F4F; }
 a:hover { color: #3e0000; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
@@ -265,7 +265,6 @@ header {
 
 #header_content {
     width: 100%;
-    height:110px margin: 0 auto;
     position: relative;
     background:#223c4a
 }
@@ -641,7 +640,6 @@ nav {
     position: relative;
     /* background-image: url("../img/banners/history_banner.jpg") ; */
     background-repeat:no-repeat;
-    height:650px;
 }
 
 #home_feature {
@@ -2072,6 +2070,9 @@ list-style-type: none;
 padding-left: 50px;	
 }
 
+.social-net a{
+     color: #FFF;
+}
 .cont-shop{
 	color:#223C4A;
 }
@@ -2094,13 +2095,17 @@ padding-left: 50px;
 	 float:left;
 }
 
-	    footer #left_content h4, footer #right_content h4 {
-        font: 12px/17px 'Open Sans', Helvetica, sans-serif;
-        font-weight: 600;
-        letter-spacing: 5px;
-        margin-bottom: 0;
-        text-transform: uppercase;
-        color: #262322;
+.footer-col3 a{
+	color: #FFF;
+}
+	    
+footer #left_content h4, footer #right_content h4 {
+	        font: 12px/17px 'Open Sans', Helvetica, sans-serif;
+	        font-weight: 600;
+	        letter-spacing: 5px;
+	        margin-bottom: 0;
+	        text-transform: uppercase;
+	        color: #262322;
     }
     
     footer #left_content {
@@ -2489,7 +2494,6 @@ and (max-width : 480px) {
         display: inline;
         position: relative;
     }
-    
         #products li .new_badge {
             width: 60px;
             height: 60px;
@@ -3353,4 +3357,7 @@ and (max-width : 480px) {
 
 .by-maker{
 	display:inline;
+}
+.home-topsell-container{
+	margin-top:30px;
 }
