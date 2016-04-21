@@ -2514,17 +2514,7 @@ and (max-width : 480px) {
             z-index: 10;
         }
         
-            #products li .image .price {
-                position: absolute;
-                background-color: black;
-                color: white;
-                opacity: 0.8;
-                padding: 10px 20px;
-                font: 16px/16px 'Open Sans', Helvetica, sans-serif;
-                font-weight: 600;
-                bottom: 5px;
-                right: 5px;
-            }
+            
         
             #products li .image img {
                 width: 320px;
@@ -3360,4 +3350,8 @@ and (max-width : 480px) {
 }
 .home-topsell-container{
 	margin-top:30px;
+}
+.sub-title-label{
+	font-weight: 600;
+	display:block;
 }

@@ -16,7 +16,8 @@
 
 <div class="content">
     <div class="title" th:utext="*{name}"></div>
-    <p th:utext="*{longDescription}"></p>
+    <span class="sub-title-label">Authored By:</span>
+    <span class="sub-title-author" th:utext="*{manufacturer}"></span>
 </div>
 
 <div th:class="*{'productActions productActions' + id}"
@@ -30,15 +31,17 @@
     <div class="in_cart" th:classappend="${!inCart}? ' hidden'" th:if="*{#lists.isEmpty(productOptions)}">
         <a class="modalcart inCart" th:href="@{/cart}"><span th:utext="#{product.inCart}">In Cart!</span></a>
     </div>
-
-    <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
-        <blc:form method="POST" th:action="@{/cart/add}">
+    <!-- <div>	
+	 <a th:href="@{*{url}}">Rent</a>
+	 </div>
+     <div class="add_to_cart" th:classappend="${inCart or !availableInventory}? ' hidden'">
+       <blc:form method="POST" th:action="@{/cart/add}">
             <input type="hidden" name="productId" th:value="*{id}" />
             <input type="hidden" name="quantity" value="1" />
             <input type="hidden" name="hasProductOptions" th:value="*{!#lists.isEmpty(productOptions)}" />
             <input type="submit" class="addToCart" th:value="#{product.buyNow}"/>
         </blc:form>
-    </div>
+    </div> -->
 
 </div>
 
