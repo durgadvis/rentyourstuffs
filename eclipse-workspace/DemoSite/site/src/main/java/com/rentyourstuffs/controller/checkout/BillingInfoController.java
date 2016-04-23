@@ -48,6 +48,9 @@ public class BillingInfoController extends BroadleafBillingInfoController {
                                      @ModelAttribute("billingInfoForm") BillingInfoForm billingForm,
                                      BindingResult result)
             throws PricingException, ServiceException {
+    	if(billingForm.getAddress().getStateProvinceRegion()==null){
+    		billingForm.getAddress().setStateProvinceRegion("KA");
+    	}
         return super.saveBillingAddress(request, response, model, billingForm, result);
     }
 

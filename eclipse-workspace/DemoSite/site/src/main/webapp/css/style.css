@@ -1076,14 +1076,15 @@ li.promotion,  ul.promotion{
 
 #cart {
     width: 920px;
-    padding: 10px;
-    margin: 10px 20px;
+    padding: 18px;
+    margin: 22px 59px;
     display: block;
     float: left;
+    border: 1px solid;
 }
 
 .cart_modal {
-    margin: 0px !important;
+    
 }
 
 .cart_title {
@@ -1720,11 +1721,12 @@ ul.payment_methods li {
 	    display: block;
 	    float: left;
 	    margin-left: 25px;
+	    border-bottom: 1px solid;
 	}
 
     #products li {
         width: 220px;
-        height: 440px;
+        height: 380px;
         margin-left: 20px;
         text-align: center;
         float: left;
@@ -3342,7 +3344,8 @@ and (max-width : 480px) {
 	margin-top:40px;
 }
 .share-product{
-	margin-top:30px;
+	margin-top:40px;
+	padding:1px;
 }
 
 .by-maker{
@@ -3354,4 +3357,26 @@ and (max-width : 480px) {
 .sub-title-label{
 	font-weight: 600;
 	display:block;
+}
+.shipping-returns-text{
+	font: 25px/18px Georgia, serif;
+    color: #223C4A;
+    margin-left: 25%;
+    margin-bottom: 4%;
+    margin-top: 43%;
+}
+
+.shipping-returns-text span{
+	background-color: beige;
+    padding: 12px;
+}
+#billing_info_form{
+	
+}
+#cart_checkout{
+	width: 920px;
+    padding-top: 18px;
+    margin: 22px 59px;
+    display: block;
+    float: left;
 }

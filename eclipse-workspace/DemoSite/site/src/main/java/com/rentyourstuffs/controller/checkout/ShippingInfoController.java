@@ -52,6 +52,9 @@ public class ShippingInfoController extends BroadleafShippingInfoController {
                                  @ModelAttribute("shippingInfoForm") ShippingInfoForm shippingForm,
                                  BindingResult result)
             throws PricingException, ServiceException {
+    	if(shippingForm.getAddress().getStateProvinceRegion()==null){
+    		shippingForm.getAddress().setStateProvinceRegion("KA");
+    	}
         return super.saveSingleShip(request, response, model, shippingForm, result);
     }
 

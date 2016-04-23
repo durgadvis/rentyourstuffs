@@ -48,7 +48,14 @@
 		            <li th:each="sku : ${skus}" th:object="${sku}" th:include="catalog/partials/skuListItem" class="product_container"></li>
 		        </ul>
        </div>
+       <div class="shipping-returns-text">
+       		<span>Free shipping</span>
+       		<span>Easy Returns</span>
+       		<span>How it works</span>
+       </div>
+       
     </div>
+    
     
     <footer th:substituteby="layout/partials/footer" />
     
