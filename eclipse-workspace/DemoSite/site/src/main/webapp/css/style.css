@@ -3380,4 +3380,14 @@ and (max-width : 480px) {
     float: left;
 }
 
+#header_logo a{
+	text-decoration: none;
+}
 
+#header_logo a:hover{
+	color:#fff;
+}
+
+#header_logo a:visited{
+	color:#fff;
+}
