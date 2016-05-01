@@ -112,6 +112,7 @@ public class RYSAddOrderItemActivity extends AddOrderItemActivity {
             		{
             			RYSOrderItem orderItem = (RYSOrderItem)item;
             			orderItem.setRentTerm(new Long(termItemByduration.get(0).getRentTerm()));
+            			orderItem.setRentPrice(orderItem.getRetailPrice());
             		}
             	}
             }

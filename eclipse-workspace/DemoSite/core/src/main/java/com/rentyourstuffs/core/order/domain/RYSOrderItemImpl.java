@@ -6,6 +6,7 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
 
+import org.broadleafcommerce.common.money.Money;
 import org.broadleafcommerce.common.presentation.AdminPresentation;
 import org.broadleafcommerce.common.presentation.AdminPresentationClass;
 import org.broadleafcommerce.common.presentation.client.VisibilityEnum;
@@ -26,6 +27,10 @@ public class RYSOrderItemImpl extends DiscreteOrderItemImpl implements RYSOrderI
 		@Column(name = "RENT_TERM")
 		@AdminPresentation(visibility = VisibilityEnum.HIDDEN_ALL)
 		protected Long rentTerm;
+		
+		@Column(name = "RENT_PRICE")
+		@AdminPresentation(visibility = VisibilityEnum.HIDDEN_ALL)
+		protected Money rentPrice;
 
 		@Override
 		public Long getRentTerm() {
@@ -35,6 +40,16 @@ public class RYSOrderItemImpl extends DiscreteOrderItemImpl implements RYSOrderI
 		@Override
 		public void setRentTerm(Long rentTerm) {
 			this.rentTerm = rentTerm;
+		}
+
+		@Override
+		public Money getRentPrice() {
+			return rentPrice;
+		}
+
+		@Override
+		public void setRentPrice(Money rentPrice) {
+			this.rentPrice = rentPrice;
 		}
 
 }

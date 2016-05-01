@@ -65,7 +65,17 @@ public class RYSDynamicSkuPricingServiceImpl implements DynamicSkuPricingService
 					retailPrice = new Money(termPrice);
 					prices.setSalePrice(salePrice);
 					prices.setRetailPrice(retailPrice);
-					setUpdatedRentalTermAtCart(rentTerm, sku.getId());
+					List<OrderItem> orderItems = CartState.getCart().getOrderItems();
+					for (OrderItem orderItem : orderItems) {
+						if (orderItem instanceof DiscreteOrderItem) {
+							DiscreteOrderItem disItem = (DiscreteOrderItem) orderItem;
+							RYSOrderItem ryso = (RYSOrderItem) disItem;
+							if (disItem.getSku().getId().equals(sku.getId())) {
+								ryso.setRentTerm(Long.valueOf(rentTerm));
+								ryso.setRentPrice(new Money(termPrice));
+							}
+						}
+					}
 					return prices;
 				}
 			}
@@ -87,23 +97,5 @@ public class RYSDynamicSkuPricingServiceImpl implements DynamicSkuPricingService
 		return prices;
 	}
 
-	/**
-	 * @param rentTerm
-	 *            Setting the updated rental terms in the cart page
-	 * @param skuId
-	 */
-	protected void setUpdatedRentalTermAtCart(String rentTerm, Long skuId) {
-		Order cart = CartState.getCart();
-		List<OrderItem> orderItems = cart.getOrderItems();
-		for (OrderItem orderItem : orderItems) {
-			if (orderItem instanceof DiscreteOrderItem) {
-				DiscreteOrderItem disItem = (DiscreteOrderItem) orderItem;
-				RYSOrderItem ryso = (RYSOrderItem) disItem;
-				if (disItem.getSku().getId().equals(skuId)) {
-					ryso.setRentTerm(Long.valueOf(rentTerm));
-				}
-			}
-		}
-	}
 
 }
