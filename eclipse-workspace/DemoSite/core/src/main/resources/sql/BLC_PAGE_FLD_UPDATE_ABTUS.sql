@@ -4,4 +4,6 @@ update BLC_PAGE_FLD set LOB_VALUE='<p style="text-align:left;margin-left:10px;fo
 
 <p style="text-align:left;margin-left:10px;font:14px/23px georgia;">So, come and help us build this system of sharing and caring with a tiny price by Renting Your Stuffs.</p>' WHERE PAGE_FLD_ID=1;
 
-update BLC_PAGE_FLD set value ='<p>About us</p>' where PAGE_FLD_ID=2;
+update BLC_PAGE_FLD set value ='<p style="margin-left:-10px">About us</p>' where PAGE_FLD_ID=2;
+
+update BLC_PAGE_FLD set value ='' where PAGE_FLD_ID=1;
