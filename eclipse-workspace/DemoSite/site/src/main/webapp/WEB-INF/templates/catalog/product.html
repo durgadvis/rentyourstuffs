@@ -55,15 +55,18 @@
 		                <div class="rent-price" th:unless="${#object instanceof T(org.broadleafcommerce.core.catalog.domain.ProductBundle)}">
 		                 <div class="rent-term-block" th:with="finalRetailPrice=*{defaultSku.retailPrice}">	
                         	<h4 class="rent-terms-text">Rental Terms</h4>
-	                        <div class="rent-term-inner" th:each="rentTermForProduct:${rentTermForProduct}">
+	                        <dl class="" th:each="rentTermForProduct:${rentTermForProduct}">
+	                        	<div class="rent-radio-block">
 	                			<input type="radio" name="rentTerm" th:value="${rentTermForProduct.rentTerm}">
-	                			
-		                		<span class="rent-term" th:text="${rentTermForProduct.rentTerm}"/> days
-		                		(due <span th:text="${#calendars.format(dueRentalDates[rentTermForProduct.rentTerm], 'dd MMM')}"/>)
-		                		<span class="term-percentage" th:with="rental_amount=${finalRetailPrice.amount*0.01*rentTermForProduct.termPercentage}"> 
-		                		₹<span  th:text="${(#numbers.formatDecimal(rental_amount,1,2))}"/> </span></input>
+	                			<div class="rent-days-div">
+		                		<dt class="dt1" th:text="${rentTermForProduct.rentTerm}"/> days
+		                		(due <dt class="dt2" th:text="${#calendars.format(dueRentalDates[rentTermForProduct.rentTerm], 'dd MMM')}"/>)
+		                		</div>
+		                		<div class="div-rs" th:with="rental_amount=${finalRetailPrice.amount*0.01*rentTermForProduct.termPercentage}"> 
+		                		<dt class="dt3" th:text="Rs.+${(#numbers.formatDecimal(rental_amount,1,2))}"/> </div></input>
 		                		
-	                		</div>
+		                		</div>
+	                		</dl>
 	                		<input type="hidden" name="skuId" th:value="*{defaultSku.id}" />
 	                		<div class="original-price-text">Original Price :<span class="original-price" th:text="${finalRetailPrice}"></span></div>
 	                		

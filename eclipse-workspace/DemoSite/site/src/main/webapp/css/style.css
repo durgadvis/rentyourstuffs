@@ -3391,3 +3391,34 @@ and (max-width : 480px) {
 #header_logo a:visited{
 	color:#fff;
 }
+
+.dt1 {
+	display: inline;
+	margin-left:3px;
+}
+
+.dt2 {
+	display: inline;
+}
+
+.dt3 {
+	display: inline;
+	float:right;
+	margin-right:16px;
+}
+
+.dt-rs{
+	float:right;
+	display: inline;
+	margin-right:3px;
+}
+
+.div-rs{
+	display: inline;
+}
+.rent-days-div{
+	display: inline;
+}
+.rent-radio-block{
+	margin-left:5px;
+}
