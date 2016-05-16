@@ -1,0 +1,29 @@
+<div class="total-block">
+	<div class="order-pricing">Order Pricing</div>
+        <table class="checkout_info_left" id="checkout_total_table" cellspacing="10">
+                    <tr>
+                        <th>Subtotal</th>
+                         <td blc:price="${cart.subTotal}"></td>
+                      </tr>
+                      <!-- <tr> 
+                        <th>Promotions</th>
+                        <td class="discount" th:if="${cart.orderAdjustmentsValue.zero}"></td>
+                        <td class="discount" th:unless="*{cart.orderAdjustmentsValue.zero}" blc:price="${cart.orderAdjustmentsValue}"></td>
+                       </tr> --> 
+                       <tr>
+	                        <th>Taxes</th>
+	                        <td blc:price="${cart.totalTax}"></td>
+                        </tr>
+                        <tr>
+	                        <th>Shipping</th>
+	                    	<td blc:price="${cart.totalShipping}"></td>
+                    	</tr>
+                    	<tr>
+                    		<th style="font-weight:bold;">Current Total</th>
+	                    	<td style="font-weight:bold;" blc:price="${cart.total}"></td>
+                    	</tr>
+          </table>
+          <div class="shop_more">
+               <a th:href="@{/}"> Shop More ?</a>
+          </div>
+        </div>
