@@ -150,7 +150,7 @@
         <constructor-arg name="reindexServer" ref="${solr.source.reindex}" />
         <constructor-arg name="adminServer" ref="${solr.source.admin}" />
     </bean>
-    <bean id="rebuildIndexJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+    <!-- <bean id="rebuildIndexJobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
         <property name="targetObject" ref="blSearchService" />
         <property name="targetMethod" value="rebuildIndex" />
     </bean> 
@@ -163,11 +163,11 @@
         <property name="triggers">
             <list>
                 <ref bean="rebuildIndexTrigger" />
-                <!--<ref bean="purgeCartTrigger" />-->
-                <!--<ref bean="purgeCustomerTrigger" />-->
+                <ref bean="purgeCartTrigger" />
+                <ref bean="purgeCustomerTrigger" />
             </list>
         </property>
-    </bean>
+    </bean> -->
     
     <!--  Broaldeaf Commerce comes with an Image Server that allows you to manipulate images.   For example, the 
           demo includes a high resolution image for each product that is reduced in size for browsing operations -->
